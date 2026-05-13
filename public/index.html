@@ -33,7 +33,9 @@
     }
 
     body {
-      background: var(--navy);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(77, 163, 255, 0.14), transparent 30%),
+        linear-gradient(180deg, #001521 0%, var(--navy) 34%, #001521 100%);
       color: #fff;
       font-family: "Montserrat", Arial, sans-serif;
       margin: 0;
@@ -61,7 +63,8 @@
     }
 
     .topbar {
-      background: rgba(1, 33, 56, 0.96);
+      background: rgba(0, 18, 31, 0.88);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       position: sticky;
       top: 0;
@@ -71,16 +74,16 @@
     .topbar .wrap {
       align-items: center;
       display: grid;
-      gap: 30px;
-      grid-template-columns: 86px auto 1fr;
-      min-height: 110px;
+      gap: 24px;
+      grid-template-columns: 74px auto 1fr;
+      min-height: 76px;
     }
 
     .logo img {
       display: block;
-      height: 72px;
+      height: 58px;
       object-fit: contain;
-      width: 72px;
+      width: 58px;
     }
 
     .socials {
@@ -96,9 +99,9 @@
       display: inline-flex;
       font-size: 12px;
       font-weight: 800;
-      height: 30px;
+      height: 28px;
       justify-content: center;
-      width: 30px;
+      width: 28px;
     }
 
     .social svg {
@@ -110,7 +113,7 @@
     .desktop-nav {
       align-items: center;
       display: flex;
-      gap: clamp(18px, 2.4vw, 36px);
+      gap: clamp(18px, 2.2vw, 34px);
       justify-content: flex-end;
     }
 
@@ -118,8 +121,9 @@
     .account-button,
     .mobile-nav a {
       font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      line-height: 1;
       text-transform: uppercase;
     }
 
@@ -130,13 +134,25 @@
     }
 
     .account-button {
-      background: linear-gradient(135deg, #5e8cff, #477cff);
-      border: 1px solid rgba(255, 255, 255, 0.36);
-      box-shadow: 0 0 24px rgba(77, 131, 255, 0.28);
-      min-width: 224px;
-      padding: 17px 18px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(124, 198, 255, 0.58);
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 0 20px rgba(77, 163, 255, 0.13);
+      display: inline-flex;
+      gap: 9px;
+      min-width: 0;
+      padding: 12px 18px;
       text-align: center;
       white-space: nowrap;
+    }
+
+    .account-button::before {
+      background: currentColor;
+      border-radius: 50%;
+      content: "";
+      height: 7px;
+      width: 7px;
     }
 
     .menu-toggle {
@@ -187,12 +203,23 @@
     .hero {
       align-items: end;
       background:
-        linear-gradient(90deg, rgba(0, 24, 43, 0.4), rgba(0, 24, 43, 0.05)),
+        radial-gradient(circle at 72% 22%, rgba(77, 163, 255, 0.22), transparent 24%),
+        linear-gradient(90deg, rgba(0, 18, 31, 0.78), rgba(0, 24, 43, 0.12)),
         url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-03.jpg") center center / cover no-repeat;
       border-bottom: 4px solid #f4f4f4;
       display: grid;
-      min-height: 522px;
-      padding: 0 0 34px;
+      min-height: 620px;
+      padding: 0 0 42px;
+      position: relative;
+    }
+
+    .hero::before {
+      background: linear-gradient(180deg, transparent, rgba(0, 18, 31, 0.32));
+      content: "";
+      inset: 76px 0 auto 0;
+      height: 180px;
+      pointer-events: none;
+      position: absolute;
     }
 
     .hero-strip {
@@ -204,12 +231,12 @@
       flex-wrap: wrap;
       gap: 18px;
       justify-content: space-between;
-      padding: 16px 20px;
+      padding: 18px 22px;
     }
 
     .hero-strip strong {
       font-family: "Cinzel", Georgia, serif;
-      font-size: 18px;
+      font-size: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -223,7 +250,7 @@
 
     .cta {
       align-items: center;
-      background: linear-gradient(135deg, #5e8cff, #477cff);
+      background: linear-gradient(135deg, #70b7ff, #4d83ff);
       border: 1px solid rgba(255, 255, 255, 0.22);
       box-shadow: 0 0 28px rgba(77, 131, 255, 0.46);
       color: #fff;
@@ -287,7 +314,7 @@
     }
 
     .button {
-      background: linear-gradient(135deg, #5e8cff, #477cff);
+      background: linear-gradient(135deg, #70b7ff, #4d83ff);
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 0 30px rgba(77, 131, 255, 0.36);
       color: #fff;
@@ -329,6 +356,7 @@
     .areas {
       background:
         radial-gradient(circle at top left, rgba(21, 73, 91, 0.52), transparent 34%),
+        radial-gradient(circle at 84% 12%, rgba(77, 163, 255, 0.12), transparent 28%),
         var(--navy);
       padding: 62px 0 78px;
     }
@@ -400,7 +428,7 @@
 
     .carousel-btn {
       align-items: center;
-      background: linear-gradient(135deg, #5e8cff, #477cff);
+      background: linear-gradient(135deg, #70b7ff, #4d83ff);
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 0 22px rgba(77, 131, 255, 0.22);
       color: #fff;
@@ -413,7 +441,7 @@
     }
 
     .carousel-btn:hover {
-      background: linear-gradient(135deg, #72a0ff, #4d83ff);
+      background: linear-gradient(135deg, #8dc6ff, #5b91ff);
     }
 
     .carousel-btn:disabled {
@@ -644,7 +672,7 @@
     }
 
     .submit {
-      background: linear-gradient(135deg, #5e8cff, #477cff);
+      background: linear-gradient(135deg, #70b7ff, #4d83ff);
       border: 1px solid rgba(255, 255, 255, 0.22);
       color: #fff;
       cursor: pointer;
@@ -656,7 +684,7 @@
     }
 
     .submit:hover {
-      background: linear-gradient(135deg, #72a0ff, #4d83ff);
+      background: linear-gradient(135deg, #8dc6ff, #5b91ff);
     }
 
     footer {
@@ -684,21 +712,20 @@
 
     @media (max-width: 1160px) {
       .topbar .wrap {
-        gap: 22px;
+        gap: 18px;
       }
 
       .desktop-nav {
-        gap: 18px;
+        gap: 16px;
       }
 
       .desktop-nav a,
       .account-button {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .account-button {
-        min-width: 190px;
-        padding: 15px 14px;
+        padding: 11px 14px;
       }
     }
 
