@@ -4,24 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hildebrando & Leite Advogados Associados</title>
-  <meta name="description" content="Escritório especializado em Direito do Trabalho, Cível, Administrativo, Previdenciário e Consumidor em Manaus.">
+  <meta name="description" content="Escritório de advocacia em Manaus com atuação estratégica em Direito do Trabalho, Cível, Administrativo, Previdenciário e Consumidor.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png">
   <style>
     :root {
-      --navy: #012138;
-      --navy-2: #00182b;
-      --navy-3: #0b263f;
-      --aqua: #15495b;
-      --blue: #4da3ff;
-      --blue-2: #7cc6ff;
-      --paper: #ffffff;
-      --ink: #071827;
-      --muted: #d8e3ea;
-      --line: rgba(255, 255, 255, 0.18);
-      --shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+      --bg: #001723;
+      --bg-2: #012138;
+      --panel: #08283e;
+      --panel-2: #0c3048;
+      --blue: #64adff;
+      --blue-2: #4d83ff;
+      --line: rgba(255, 255, 255, 0.16);
+      --text: #ffffff;
+      --muted: #c7d5df;
+      --paper: #f7f8f8;
+      --ink: #012138;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
     }
 
     * {
@@ -33,10 +34,8 @@
     }
 
     body {
-      background:
-        radial-gradient(circle at 78% 18%, rgba(77, 163, 255, 0.14), transparent 30%),
-        linear-gradient(180deg, #001521 0%, var(--navy) 34%, #001521 100%);
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       font-family: "Montserrat", Arial, sans-serif;
       margin: 0;
       overflow-x: hidden;
@@ -57,29 +56,31 @@
 
     .wrap {
       margin: 0 auto;
-      max-width: 1160px;
+      max-width: 1180px;
       padding: 0 24px;
       width: 100%;
     }
 
-    .topbar {
-      background: rgba(0, 18, 31, 0.88);
+    .site-header {
+      background: rgba(0, 15, 25, 0.9);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      left: 0;
       position: sticky;
+      right: 0;
       top: 0;
-      z-index: 30;
+      z-index: 40;
     }
 
-    .topbar .wrap {
+    .nav-shell {
       align-items: center;
       display: grid;
-      gap: 24px;
-      grid-template-columns: 74px auto 1fr;
-      min-height: 76px;
+      gap: 26px;
+      grid-template-columns: 70px auto 1fr;
+      min-height: 84px;
     }
 
-    .logo img {
+    .brand img {
       display: block;
       height: 58px;
       object-fit: contain;
@@ -95,10 +96,8 @@
       align-items: center;
       background: #fff;
       border-radius: 50%;
-      color: var(--navy);
+      color: var(--bg-2);
       display: inline-flex;
-      font-size: 12px;
-      font-weight: 800;
       height: 28px;
       justify-content: center;
       width: 28px;
@@ -106,49 +105,43 @@
 
     .social svg {
       fill: currentColor;
-      height: 15px;
-      width: 15px;
+      height: 14px;
+      width: 14px;
     }
 
-    .desktop-nav {
+    .main-nav {
       align-items: center;
       display: flex;
-      gap: clamp(18px, 2.2vw, 34px);
+      gap: clamp(18px, 2vw, 34px);
       justify-content: flex-end;
     }
 
-    .desktop-nav a,
-    .account-button,
-    .mobile-nav a {
-      font-size: 15px;
-      font-weight: 600;
+    .main-nav a {
+      color: #f7fbff;
+      font-size: 13px;
+      font-weight: 700;
       letter-spacing: 0.03em;
       line-height: 1;
       text-transform: uppercase;
-    }
-
-    .desktop-nav a:hover,
-    .account-button:hover,
-    .mobile-nav a:hover {
-      opacity: 0.72;
-    }
-
-    .account-button {
-      align-items: center;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(124, 198, 255, 0.58);
-      border-radius: 999px;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 0 20px rgba(77, 163, 255, 0.13);
-      display: inline-flex;
-      gap: 9px;
-      min-width: 0;
-      padding: 12px 18px;
-      text-align: center;
       white-space: nowrap;
     }
 
-    .account-button::before {
-      background: currentColor;
+    .main-nav a:hover {
+      color: var(--blue);
+    }
+
+    .account-pill {
+      align-items: center;
+      border: 1px solid rgba(100, 173, 255, 0.78);
+      border-radius: 999px;
+      box-shadow: 0 0 22px rgba(100, 173, 255, 0.14);
+      display: inline-flex;
+      gap: 9px;
+      padding: 13px 22px;
+    }
+
+    .account-pill::before {
+      background: var(--blue);
       border-radius: 50%;
       content: "";
       height: 7px;
@@ -161,9 +154,10 @@
       border: 1px solid rgba(255, 255, 255, 0.35);
       color: #fff;
       display: none;
-      height: 44px;
+      height: 42px;
       justify-content: center;
-      width: 44px;
+      justify-self: end;
+      width: 42px;
     }
 
     .menu-toggle span,
@@ -188,442 +182,430 @@
     }
 
     .mobile-nav {
-      background: var(--navy-2);
+      background: #00121f;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: none;
-      padding: 20px 24px 28px;
+      padding: 18px 24px 28px;
     }
 
     .mobile-nav a {
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       padding: 16px 0;
+      text-transform: uppercase;
     }
 
     .hero {
-      align-items: end;
       background:
-        radial-gradient(circle at 72% 22%, rgba(77, 163, 255, 0.22), transparent 24%),
-        linear-gradient(90deg, rgba(0, 18, 31, 0.78), rgba(0, 24, 43, 0.12)),
+        radial-gradient(circle at 76% 22%, rgba(100, 173, 255, 0.18), transparent 27%),
+        linear-gradient(90deg, rgba(0, 18, 31, 0.98) 0%, rgba(0, 18, 31, 0.72) 46%, rgba(0, 18, 31, 0.22) 100%),
         url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-03.jpg") center center / cover no-repeat;
-      border-bottom: 4px solid #f4f4f4;
-      display: grid;
-      min-height: 620px;
-      padding: 0 0 42px;
+      min-height: calc(100vh - 84px);
+      padding: 94px 0 72px;
       position: relative;
     }
 
-    .hero::before {
-      background: linear-gradient(180deg, transparent, rgba(0, 18, 31, 0.32));
+    .hero::after {
+      background: linear-gradient(180deg, transparent, var(--bg));
+      bottom: 0;
       content: "";
-      inset: 76px 0 auto 0;
-      height: 180px;
-      pointer-events: none;
+      height: 170px;
+      left: 0;
       position: absolute;
+      right: 0;
     }
 
-    .hero-strip {
+    .hero-grid {
       align-items: center;
-      backdrop-filter: blur(14px);
-      background: rgba(1, 33, 56, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: space-between;
-      padding: 18px 22px;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.92fr 1.08fr;
+      min-height: 560px;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-strip strong {
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 20px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .hero-strip span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-      max-width: 520px;
-    }
-
-    .cta {
+    .eyebrow {
       align-items: center;
-      background: linear-gradient(135deg, #70b7ff, #4d83ff);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: 0 0 28px rgba(77, 131, 255, 0.46);
-      color: #fff;
+      color: var(--blue);
       display: inline-flex;
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 14px;
-      font-weight: 700;
-      justify-content: center;
-      letter-spacing: 0.04em;
-      min-height: 58px;
-      min-width: 254px;
-      padding: 0 28px;
+      font-size: 12px;
+      font-weight: 800;
+      gap: 10px;
+      letter-spacing: 0.18em;
+      margin: 0 0 18px;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
-    .institutional {
-      background:
-        linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.98) 34%, rgba(255, 255, 255, 0.76) 58%, rgba(255, 255, 255, 0.16) 100%),
-        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg") center center / cover no-repeat;
-      color: var(--navy);
-      min-height: 477px;
-      padding: 10px 0 38px;
-    }
-
-    .top-rule {
-      background: #5c6062;
-      height: 3px;
-      margin: 0 auto 34px;
-      max-width: 1140px;
-      width: 62%;
-    }
-
-    .institutional-copy {
-      max-width: 570px;
-      padding-left: 6px;
+    .eyebrow::before {
+      background: currentColor;
+      content: "";
+      height: 1px;
+      width: 42px;
     }
 
     h1,
     h2,
     h3 {
       font-family: "Cinzel", Georgia, serif;
-      line-height: 1.04;
       margin: 0;
     }
 
-    .institutional h1 {
-      font-size: clamp(26px, 3.2vw, 38px);
-      font-weight: 600;
-      margin-bottom: 24px;
+    .hero h1 {
+      font-size: clamp(44px, 5.8vw, 76px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span,
+    .section-title span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0 0 30px;
+      max-width: 620px;
+    }
+
+    .cta-row {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      align-items: center;
+      background: linear-gradient(135deg, #70b7ff, #4d83ff);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      box-shadow: 0 0 28px rgba(77, 131, 255, 0.42);
+      color: #fff;
+      display: inline-flex;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
+      gap: 10px;
+      justify-content: center;
+      letter-spacing: 0.04em;
+      min-height: 52px;
+      padding: 0 24px;
       text-transform: uppercase;
     }
 
-    .institutional p {
-      font-size: 13px;
+    .btn svg {
+      fill: currentColor;
+      height: 16px;
+      width: 16px;
+    }
+
+    .btn.ghost {
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: none;
+    }
+
+    .hero-card {
+      background: rgba(1, 33, 56, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .hero-card img {
+      display: block;
+      margin: 0 auto 22px;
+      opacity: 0.78;
+      width: min(100%, 620px);
+    }
+
+    .hero-card dl {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0;
+    }
+
+    .hero-card div {
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      padding-left: 16px;
+    }
+
+    .hero-card dt {
+      color: var(--blue);
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .hero-card dd {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 4px 0 0;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .split {
+      background:
+        linear-gradient(90deg, rgba(247, 248, 248, 0.98) 0%, rgba(247, 248, 248, 0.92) 52%, rgba(247, 248, 248, 0.32) 100%),
+        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg") center center / cover no-repeat;
+      color: var(--ink);
+      padding: 88px 0;
+    }
+
+    .split-grid {
+      display: grid;
+      gap: 56px;
+      grid-template-columns: 0.92fr 1.08fr;
+    }
+
+    .section-kicker {
+      border: 1px solid rgba(1, 33, 56, 0.22);
+      border-radius: 999px;
+      color: var(--bg-2);
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .split p {
+      color: #173249;
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
+      line-height: 1.75;
       margin: 0 0 16px;
       text-align: justify;
     }
 
-    .button {
-      background: linear-gradient(135deg, #70b7ff, #4d83ff);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 0 30px rgba(77, 131, 255, 0.36);
+    .feature-panel {
+      align-self: end;
+      background: rgba(1, 33, 56, 0.92);
       color: #fff;
-      display: inline-flex;
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 14px;
-      font-weight: 700;
-      justify-content: center;
-      letter-spacing: 0.05em;
-      margin-top: 18px;
-      min-width: min(100%, 292px);
-      padding: 18px 22px;
-      text-transform: uppercase;
+      padding: 30px;
     }
 
-    .section-label {
-      align-items: center;
-      background: #fff;
-      color: #6d7a87;
-      display: flex;
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 18px;
-      justify-content: center;
-      min-height: 44px;
-      text-transform: uppercase;
+    .feature-panel h3 {
+      font-size: 25px;
+      margin-bottom: 14px;
     }
 
-    .section-label::before,
-    .section-label::after {
-      background: currentColor;
-      content: "";
-      display: inline-block;
-      height: 4px;
-      margin: 0 8px;
-      max-width: 180px;
-      width: 18vw;
+    .feature-panel p {
+      color: var(--muted);
+      text-align: left;
     }
 
     .areas {
       background:
-        radial-gradient(circle at top left, rgba(21, 73, 91, 0.52), transparent 34%),
-        radial-gradient(circle at 84% 12%, rgba(77, 163, 255, 0.12), transparent 28%),
-        var(--navy);
-      padding: 62px 0 78px;
+        radial-gradient(circle at 12% 16%, rgba(100, 173, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(100, 173, 255, 0.1), transparent 24%),
+        var(--bg);
+      padding: 90px 0;
     }
 
-    .area-carousel {
-      margin: 0 auto;
-      max-width: 1100px;
+    .center-head {
+      margin: 0 auto 38px;
+      max-width: 780px;
+      text-align: center;
+    }
+
+    .center-head .section-kicker {
+      border-color: rgba(100, 173, 255, 0.34);
+      color: var(--blue);
+    }
+
+    .center-head p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .practice-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .practice-card {
+      background: rgba(8, 40, 62, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+      min-height: 395px;
       overflow: hidden;
-      position: relative;
+      transition: transform 280ms ease, border-color 280ms ease;
     }
 
-    .area-track {
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      transition: transform 520ms ease;
+    .practice-card:hover {
+      border-color: rgba(100, 173, 255, 0.55);
+      transform: translateY(-8px);
     }
 
-    .area-card {
-      background: linear-gradient(180deg, rgba(13, 37, 60, 0.94), rgba(2, 27, 49, 0.98));
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      flex: 0 0 348px;
-      min-height: 520px;
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .area-card img {
-      aspect-ratio: 16 / 9;
+    .practice-card img {
+      aspect-ratio: 16 / 10;
       display: block;
-      filter: saturate(0.86) brightness(0.74);
+      filter: saturate(0.92) brightness(0.82);
       object-fit: cover;
-      object-position: center;
       width: 100%;
     }
 
-    .area-content {
-      padding: 32px 24px 28px;
+    .practice-card div {
+      padding: 24px 20px 26px;
     }
 
-    .area-card h3 {
+    .practice-card h3 {
       color: #fff;
-      font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(24px, 2.6vw, 32px);
-      font-weight: 700;
-      line-height: 1.06;
-      margin-bottom: 18px;
-      text-align: left;
+      font-size: 23px;
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
 
-    .area-card p {
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 14px;
+    .practice-card p {
+      color: var(--muted);
+      font-size: 13px;
       font-weight: 500;
-      line-height: 1.52;
-      margin: 0 0 12px;
-      text-align: left;
-    }
-
-    .carousel-controls {
-      align-items: center;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      margin-top: 26px;
-    }
-
-    .carousel-btn {
-      align-items: center;
-      background: linear-gradient(135deg, #70b7ff, #4d83ff);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 22px rgba(77, 131, 255, 0.22);
-      color: #fff;
-      cursor: pointer;
-      display: inline-flex;
-      font-size: 24px;
-      height: 44px;
-      justify-content: center;
-      width: 44px;
-    }
-
-    .carousel-btn:hover {
-      background: linear-gradient(135deg, #8dc6ff, #5b91ff);
-    }
-
-    .carousel-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.35;
-    }
-
-    .carousel-dots {
-      display: flex;
-      gap: 10px;
-    }
-
-    .carousel-dot {
-      background: rgba(255, 255, 255, 0.35);
-      border: 0;
-      border-radius: 999px;
-      cursor: pointer;
-      height: 7px;
-      padding: 0;
-      transition: width 220ms ease, background 220ms ease;
-      width: 7px;
-    }
-
-    .carousel-dot.is-active {
-      background: #fff;
-      width: 26px;
-    }
-
-    .partners-section {
-      background: var(--navy);
-      padding: 62px 0 64px;
+      line-height: 1.55;
+      margin: 0;
     }
 
     .partners {
+      background:
+        linear-gradient(180deg, rgba(0, 23, 35, 0.72), rgba(0, 23, 35, 1)),
+        var(--bg);
+      padding: 86px 0;
+    }
+
+    .partner-grid {
       display: grid;
       gap: 24px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .partner-card {
-      background: linear-gradient(180deg, #0d253c 0%, #0b2136 100%);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 8px;
-      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(180deg, rgba(12, 48, 72, 0.94), rgba(8, 32, 52, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      min-height: 100%;
-      overflow: hidden;
-      padding: 34px 18px 28px;
-      position: relative;
+      min-height: 650px;
+      padding: 34px 24px 28px;
       text-align: center;
-      transform: translateY(0);
-      transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;
-    }
-
-    .partner-card::before {
-      background: linear-gradient(90deg, transparent, #1b6a82, transparent);
-      content: "";
-      height: 3px;
-      left: 18px;
-      opacity: 0;
-      position: absolute;
-      right: 18px;
-      top: 0;
-      transition: opacity 280ms ease;
+      transition: transform 280ms ease, border-color 280ms ease;
     }
 
     .partner-card:hover {
-      border-color: rgba(255, 255, 255, 0.16);
-      box-shadow: 0 30px 74px rgba(0, 0, 0, 0.28);
+      border-color: rgba(100, 173, 255, 0.5);
       transform: translateY(-8px);
     }
 
-    .partner-card:hover::before {
-      opacity: 1;
-    }
-
     .portrait {
-      border: 8px solid #0d4558;
+      border: 8px solid #0f5267;
       border-radius: 50%;
       height: 286px;
       margin: 0 auto 28px;
       object-fit: cover;
       object-position: center top;
-      transition: transform 420ms ease, border-color 280ms ease;
       width: 286px;
     }
 
-    .partner-card:hover .portrait {
-      border-color: #1f7188;
-      transform: scale(1.035);
-    }
-
     .partner-card h3 {
-      color: #fff;
       font-size: 21px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .linkedin {
-      color: #fff;
+      color: var(--blue);
       display: inline-flex;
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 800;
       justify-content: center;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .partner-card p {
       color: #fff;
       font-size: 12px;
       font-weight: 500;
-      line-height: 1.42;
-      margin: 0;
+      line-height: 1.48;
+      margin: auto 0 0;
       text-align: justify;
-    }
-
-    .partner-copy {
-      margin-top: auto;
     }
 
     .contact {
       background:
-        linear-gradient(90deg, rgba(1, 33, 56, 0.2), rgba(1, 10, 19, 0.72)),
+        radial-gradient(circle at 18% 18%, rgba(100, 173, 255, 0.16), transparent 26%),
+        linear-gradient(90deg, rgba(0, 18, 31, 0.86), rgba(0, 18, 31, 0.62)),
         url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-CONTATO.png") center center / cover no-repeat;
-      color: #fff;
-      min-height: 544px;
-      padding: 38px 0 42px;
+      padding: 92px 0;
     }
 
     .contact-grid {
       display: grid;
-      gap: 70px;
-      grid-template-columns: 43% 1fr;
-    }
-
-    .contact h2 {
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 32px;
-      font-weight: 500;
-      margin: 0 0 22px;
+      gap: 46px;
+      grid-template-columns: 0.9fr 1.1fr;
     }
 
     .contact-list {
       display: grid;
       gap: 18px;
+      margin-top: 28px;
     }
 
     .contact-item {
+      align-items: start;
       display: grid;
-      gap: 18px;
+      gap: 14px;
       grid-template-columns: 34px 1fr;
-      min-height: 34px;
     }
 
     .contact-icon {
       align-items: center;
+      background: rgba(100, 173, 255, 0.14);
+      border: 1px solid rgba(100, 173, 255, 0.32);
+      border-radius: 50%;
       display: flex;
+      height: 34px;
       justify-content: center;
+      width: 34px;
     }
 
     .contact-icon svg {
-      display: block;
       fill: #fff;
-      height: 24px;
-      width: 24px;
+      height: 18px;
+      width: 18px;
     }
 
-    .contact-item a,
-    .contact-item span {
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.35;
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .map {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      height: 190px;
-      margin-top: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      height: 210px;
+      margin-top: 30px;
       overflow: hidden;
     }
 
@@ -634,109 +616,104 @@
     }
 
     form {
-      backdrop-filter: blur(10px);
-      background: rgba(1, 18, 38, 0.62);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
-      margin-top: 62px;
-      padding: 24px;
+      background: rgba(8, 40, 62, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+      padding: 32px;
     }
 
     label {
+      color: #fff;
       display: block;
-      font-size: 18px;
-      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
     input,
     textarea {
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid transparent;
-      border-radius: 0;
+      color: #061826;
       display: block;
       font: 14px "Montserrat", Arial, sans-serif;
-      margin-bottom: 10px;
-      padding: 12px 16px;
+      margin-bottom: 16px;
+      padding: 14px 16px;
       width: 100%;
     }
 
     input:focus,
     textarea:focus {
-      border-color: #76bdd0;
-      outline: 3px solid rgba(118, 189, 208, 0.24);
+      border-color: var(--blue);
+      outline: 3px solid rgba(100, 173, 255, 0.24);
     }
 
     textarea {
-      min-height: 94px;
+      min-height: 120px;
       resize: vertical;
     }
 
     .submit {
-      background: linear-gradient(135deg, #70b7ff, #4d83ff);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #fff;
+      border: 0;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 400;
-      padding: 13px;
-      text-transform: uppercase;
       width: 100%;
     }
 
-    .submit:hover {
-      background: linear-gradient(135deg, #8dc6ff, #5b91ff);
-    }
-
     footer {
-      background: var(--navy);
-      padding: 66px 0;
+      background: #00111d;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 44px 0;
     }
 
     footer .wrap {
       align-items: center;
       display: grid;
-      grid-template-columns: 120px 1fr auto;
+      gap: 22px;
+      grid-template-columns: 90px 1fr auto;
     }
 
     footer img {
       height: 58px;
-      object-fit: contain;
       width: 58px;
     }
 
     footer p {
-      font-size: 14px;
+      color: var(--muted);
+      font-size: 13px;
       margin: 0;
       text-align: center;
     }
 
-    @media (max-width: 1160px) {
-      .topbar .wrap {
+    @media (max-width: 1120px) {
+      .nav-shell {
         gap: 18px;
       }
 
-      .desktop-nav {
+      .main-nav {
         gap: 16px;
       }
 
-      .desktop-nav a,
-      .account-button {
+      .main-nav a {
         font-size: 12px;
       }
 
-      .account-button {
-        padding: 11px 14px;
+      .account-pill {
+        padding: 11px 15px;
+      }
+
+      .practice-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width: 980px) {
-      .topbar .wrap {
-        grid-template-columns: 78px 1fr 44px;
-        min-height: 84px;
+    @media (max-width: 920px) {
+      .nav-shell {
+        grid-template-columns: 70px 1fr 42px;
       }
 
-      .topbar .socials,
-      .desktop-nav {
+      .site-header .socials,
+      .main-nav {
         display: none;
       }
 
@@ -748,104 +725,46 @@
         display: block;
       }
 
-      .logo img {
-        height: 58px;
-        width: 58px;
-      }
-
       .hero {
-        min-height: 420px;
+        min-height: auto;
+        padding: 72px 0 54px;
       }
 
-      .partners,
+      .hero-grid,
+      .split-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .partner-card {
-        min-height: 0;
+      .hero-card dl {
+        grid-template-columns: 1fr;
       }
 
-      .area-card {
-        flex-basis: 348px;
-      }
-
-      .area-carousel {
-        max-width: 724px;
-      }
-
-      form {
-        margin-top: 0;
+      .practice-grid,
+      .partner-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 620px) {
       .wrap {
         padding: 0 18px;
       }
 
-      .topbar .wrap {
-        gap: 16px;
-        grid-template-columns: 64px 1fr 44px;
+      .hero h1 {
+        font-size: 38px;
       }
 
-      .hero {
-        background-image:
-          linear-gradient(180deg, rgba(0, 24, 43, 0.12), rgba(0, 24, 43, 0.18)),
-          url("https://hildebrandoleite.com.br/wp-content/uploads/2025/03/Banner-mobile-Hildebrando-1.png");
-        min-height: 319px;
-      }
-
-      .hero-strip {
-        display: none;
-      }
-
-      .institutional {
-        background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88)),
-          url("https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg") center center / cover no-repeat;
-      }
-
-      .institutional h1 {
-        font-size: 22px;
-      }
-
-      .button {
-        font-size: 12px;
-        letter-spacing: 0.18em;
-      }
-
-      .section-label {
-        font-size: 14px;
-      }
-
-      .area-card {
-        min-height: 0;
-        padding: 32px 22px;
+      .section-title {
+        font-size: 32px;
       }
 
       .portrait {
-        height: min(72vw, 300px);
-        width: min(72vw, 300px);
-      }
-
-      .area-card {
-        flex-basis: min(100%, 348px);
-        min-height: 0;
-      }
-
-      .area-carousel {
-        max-width: min(100%, 348px);
-      }
-
-      .contact {
-        background:
-          linear-gradient(180deg, rgba(1, 33, 56, 0.42), rgba(1, 10, 19, 0.82)),
-          url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-CONTATO.png") center center / cover no-repeat;
+        height: min(72vw, 286px);
+        width: min(72vw, 286px);
       }
 
       footer .wrap {
-        gap: 20px;
         grid-template-columns: 1fr;
         justify-items: center;
       }
@@ -853,23 +772,23 @@
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="logo" href="#home" aria-label="Hildebrando & Leite">
+  <header class="site-header">
+    <div class="wrap nav-shell">
+      <a class="brand" href="#home" aria-label="Hildebrando & Leite">
         <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
       </a>
       <div class="socials" aria-label="Redes sociais">
-        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5-2.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm4.5 5.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm5-0.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
         <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM3 9h4v12H3V9Zm6.2 0H13v1.64h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg></a>
-        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.2 17.6L1 23l5.5-1.4A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.9.9-3.2-.2-.3A8 8 0 1 1 12 20Zm4.5-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.4.1-.6l-.7-1.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s1 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1 0-.2-.2-.3-.4-.4Z"/></svg></a>
+        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.2 17.6L1 23l5.5-1.4A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"/></svg></a>
       </div>
-      <nav class="desktop-nav" aria-label="Navegação principal">
+      <nav class="main-nav" aria-label="Navegação principal">
         <a href="#home">Home</a>
         <a href="#institucional">Institucional</a>
         <a href="#socias">Sócias</a>
-        <a href="#areasdeatuacao">Áreas de Atuação</a>
-        <a href="#faleconosco">Fale Conosco</a>
-        <a class="account-button" href="admin/">Acessar minha conta</a>
+        <a href="#areasdeatuacao">Áreas</a>
+        <a href="#faleconosco">Contato</a>
+        <a class="account-pill" href="admin/">Acessar minha conta</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
     </div>
@@ -884,143 +803,96 @@
   </header>
 
   <main>
-    <section class="hero" id="home" aria-label="Hildebrando & Leite Advogados Associados">
-      <div class="wrap">
-        <div class="hero-strip">
-          <strong>Advocacia estratégica</strong>
-          <span>Atendimento jurídico consultivo e contencioso para empresas, trabalhadores, sindicatos e pessoas físicas em Manaus.</span>
-          <a class="cta" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Agendar reunião</a>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Advocacia estratégica</p>
+          <h1>Hildebrando & Leite <span>Advogados</span></h1>
+          <p>Atuação jurídica consultiva e contenciosa com presença técnica, atendimento próximo e estratégia para empresas, trabalhadores, sindicatos e pessoas físicas em Manaus.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Falar com advogado</a>
+            <a class="btn ghost" href="#areasdeatuacao">Ver áreas</a>
+          </div>
         </div>
+        <aside class="hero-card">
+          <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="Hildebrando & Leite">
+          <dl>
+            <div><dt>15+</dt><dd>anos de atuação jurídica estratégica</dd></div>
+            <div><dt>5</dt><dd>áreas principais de atendimento</dd></div>
+            <div><dt>AM</dt><dd>escritório em Manaus com atuação nacional</dd></div>
+          </dl>
+        </aside>
       </div>
     </section>
 
-    <section class="institutional" id="institucional">
-      <div class="top-rule"></div>
-      <div class="wrap">
-        <div class="institutional-copy">
-          <h1>Escritório especializado<br>em Direito Trabalho.</h1>
-          <p>Atuamos na defesa dos interesses dos nossos clientes, sociedades empresárias, trabalhadores e sindicatos patronais e profissionais, assegurando um serviço diferenciado, focado em um atendimento personalizado. Ao oferecermos soluções que contribuem sempre para o melhor resultado pretendido, buscamos, incansavelmente, nosso maior propósito: desenvolver relações de confiança, sólidas e duradouras.</p>
-          <p>Nossa equipe, composta por profissionais de notável formação acadêmica, é responsável pela condução de temas contenciosos e processuais estratégicos, com a definição do planejamento processual e de resolução de disputas mais adequadas a cada caso.</p>
-          <p>Atendemos matérias contenciosas e consultivas estratégicas, em demandas administrativas, judiciais ou preventivas, com a emissão de pareceres e opiniões jurídicas.</p>
-          <a class="button" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Marque uma reunião</a>
+    <section class="split" id="institucional">
+      <div class="wrap split-grid">
+        <div>
+          <span class="section-kicker">Institucional</span>
+          <h2 class="section-title">Escritório especializado em <span>Direito do Trabalho.</span></h2>
+          <p>Atuamos na defesa dos interesses dos nossos clientes, sociedades empresárias, trabalhadores e sindicatos patronais e profissionais, assegurando um serviço diferenciado, focado em atendimento personalizado.</p>
+          <p>Nossa equipe, composta por profissionais de notável formação acadêmica, conduz temas contenciosos e processuais estratégicos, com planejamento processual adequado a cada caso.</p>
+          <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Marque uma reunião</a>
+        </div>
+        <div class="feature-panel">
+          <h3>Atuação preventiva, consultiva e contenciosa.</h3>
+          <p>Demandas administrativas, judiciais e preventivas, com emissão de pareceres, opiniões jurídicas e condução técnica de processos de alta relevância.</p>
         </div>
       </div>
     </section>
 
     <section class="areas" id="areasdeatuacao">
       <div class="wrap">
-        <div class="area-carousel" aria-label="Carrossel de áreas de atuação">
-          <div class="area-track">
-          <article class="area-card">
-            <img src="./assets/areas/civil.png" alt="Direito Cível">
-            <div class="area-content">
-              <h3>Direito Cível</h3>
-              <p>Família e Sucessões</p>
-              <p>Vasta experiência em causas de alta complexidade, atuando em tribunais e instâncias superiores, nas áreas familiar e sucessória em demandas consultivas e contenciosas.</p>
-            </div>
-          </article>
-          <article class="area-card">
-            <img src="./assets/areas/administrativo.png" alt="Direito Administrativo">
-            <div class="area-content">
-              <h3>Direito Administrativo</h3>
-              <p>Atuação junto a agências reguladoras, órgãos públicos e autarquias em todas as esferas.</p>
-              <p>Assessoria em processos administrativos, contratações, defesas, impugnações, fiscalizações e ações judiciais estratégicas.</p>
-            </div>
-          </article>
-          <article class="area-card">
-            <img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista">
-            <div class="area-content">
-              <h3>Direito Trabalhista</h3>
-              <p>Atuação consultiva e contenciosa para empresas, trabalhadores e sindicatos.</p>
-              <p>Compliance Trabalhista, mitigação de riscos, defesa em alta complexidade e acompanhamento junto ao Ministério Público do Trabalho.</p>
-            </div>
-          </article>
-          <article class="area-card">
-            <img src="./assets/areas/previdenciario.png" alt="Direito Previdenciário">
-            <div class="area-content">
-              <h3>Direito Previdenciário</h3>
-              <p>Atuação administrativa e judicial em benefícios, revisões e planejamento previdenciário.</p>
-              <p>Condução estratégica de requerimentos, recursos e ações, com análise documental cuidadosa e orientação clara.</p>
-            </div>
-          </article>
-          <article class="area-card">
-            <img src="./assets/areas/consumidor.png" alt="Direito do Consumidor">
-            <div class="area-content">
-              <h3>Direito do Consumidor</h3>
-              <p>Demandas individuais e coletivas com estratégia preventiva e contenciosa.</p>
-              <p>Atuação em conflitos de consumo, responsabilidade civil e proteção de direitos com seriedade e eficiência.</p>
-            </div>
-          </article>
-          </div>
+        <div class="center-head">
+          <span class="section-kicker">Áreas de atuação</span>
+          <h2 class="section-title">Especialistas em diversas <span>áreas jurídicas</span></h2>
+          <p>Uma estrutura enxuta, técnica e preparada para conduzir temas sensíveis com clareza, estratégia e discrição.</p>
         </div>
-        <div class="carousel-controls" aria-label="Controles do carrossel">
-          <button class="carousel-btn" type="button" data-area-prev aria-label="Área anterior">‹</button>
-          <div class="carousel-dots" aria-label="Páginas do carrossel"></div>
-          <button class="carousel-btn" type="button" data-area-next aria-label="Próxima área">›</button>
+        <div class="practice-grid">
+          <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito Cível"><div><h3>Direito Cível</h3><p>Família, sucessões, inventários, partilhas, divórcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo"><div><h3>Direito Administrativo</h3><p>Atuação junto a órgãos públicos, agências reguladoras, autarquias, processos administrativos e ações judiciais estratégicas.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito Previdenciário"><div><h3>Direito Previdenciário</h3><p>Benefícios, revisões, planejamento previdenciário, requerimentos administrativos e ações judiciais.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e proteção de direitos em relações de consumo.</p></div></article>
         </div>
       </div>
     </section>
 
-    <div class="section-label">Sócias</div>
-    <section class="partners-section" id="socias">
+    <section class="partners" id="socias">
       <div class="wrap">
-        <div class="partners">
-          <article class="partner-card">
-            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Miriã Hildebrando">
-            <h3>Miriã Hildebrando</h3>
-            <a class="linkedin" href="#" aria-label="LinkedIn de Miriã Hildebrando">in</a>
-            <div class="partner-copy"><p>Sócia Fundadora e Diretora Administrativa<br>Advogada, com mais de 15 anos de atuação expressiva em Direito Coletivo Sindical, com sindicatos patronais e profissionais, das mais diversas áreas, além de experiência no direcionamento empresarial em relação de negócios e planejamentos, buscando aprimorar a performance estratégica das atividades empresariais.</p></div>
-          </article>
-          <article class="partner-card">
-            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natália Hildebrando">
-            <h3>Natália Hildebrando</h3>
-            <a class="linkedin" href="#" aria-label="LinkedIn de Natália Hildebrando">in</a>
-            <div class="partner-copy"><p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo - Diretora Operacional<br>Especialista em Direito do Trabalho e em Direito Empresarial, com ampla experiência em Compliance Trabalhista, com foco na mitigação de riscos e passivos, além de intensa atuação em Direito Coletivo do Trabalho junto aos Sindicatos das mais diversas categorias, patronais e profissionais.</p></div>
-          </article>
-          <article class="partner-card">
-            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Ângela Leite">
-            <h3>Ângela Leite</h3>
-            <a class="linkedin" href="#" aria-label="LinkedIn de Ângela Leite">in</a>
-            <div class="partner-copy"><p>Sócia Coordenadora das áreas Cível e Previdenciário - Diretora Comercial<br>Advogada militante há mais de 15 anos, especialista em negociações, condução de audiências em causas de alta complexidade e negociações sindicais, com atuação diferenciada em direito de família, na condução de processos de divórcios, inventários judicial e extrajudicial e ampla experiência em direito previdenciário nas esferas administrativa e judicial.</p></div>
-          </article>
+        <div class="center-head">
+          <span class="section-kicker">Sócias</span>
+          <h2 class="section-title">Direção técnica com <span>experiência real</span></h2>
+        </div>
+        <div class="partner-grid">
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Miriã Hildebrando"><h3>Miriã Hildebrando</h3><a class="linkedin" href="#">in</a><p>Sócia Fundadora e Diretora Administrativa. Advogada com mais de 15 anos de atuação em Direito Coletivo Sindical, direcionamento empresarial e planejamento estratégico.</p></article>
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natália Hildebrando"><h3>Natália Hildebrando</h3><a class="linkedin" href="#">in</a><p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo. Especialista em Direito do Trabalho e Direito Empresarial, com ampla experiência em Compliance Trabalhista.</p></article>
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Ângela Leite"><h3>Ângela Leite</h3><a class="linkedin" href="#">in</a><p>Sócia Coordenadora das áreas Cível e Previdenciário. Advogada militante há mais de 15 anos, especialista em negociações, audiências de alta complexidade e direito de família.</p></article>
         </div>
       </div>
     </section>
 
-    <div class="section-label">Contato e Localização</div>
     <section class="contact" id="faleconosco">
-      <div class="wrap">
-        <div class="contact-grid">
-          <div>
-            <h2>Endereço e Contato</h2>
-            <div class="contact-list">
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.8A2.8 2.8 0 1 1 12 6.2a2.8 2.8 0 0 1 0 5.6Z"/></svg></span>
-                <span>Av. Dr. Theomário Pinto da Costa, nº 811, Bairro Chapada,<br>13º. andar, Sala 1301, Edifício Skye Platinum Offices<br>Bairro Chapada, Manaus-AM</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.6c0 .7-.6 1.3-1.3 1.3C10.3 22.1 1.9 13.7 1.9 3.3 1.9 2.6 2.5 2 3.2 2h3.6c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg></span>
-                <a href="tel:+5592534846021">(92) 3348-4602 | (92) 99365-2007</a>
-              </div>
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 8 8-5.3V7L12 12.2 4 7v.7L12 13Z"/></svg></span>
-                <a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a>
-              </div>
-            </div>
-            <div class="map">
-              <iframe loading="lazy" src="https://www.google.com/maps?q=Edif%C3%ADcio%20Skye%20Platinum%20Offices%20Manaus&output=embed" title="Mapa do escritório Hildebrando & Leite"></iframe>
-            </div>
+      <div class="wrap contact-grid">
+        <div>
+          <span class="section-kicker">Contato</span>
+          <h2 class="section-title">Como podemos ajudar na sua demanda?</h2>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"/></svg></span><span>Av. Dr. Theomário Pinto da Costa, nº 811, Bairro Chapada, 13º andar, Sala 1301, Edifício Skye Platinum Offices, Manaus-AM</span></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.6c0 .7-.6 1.3-1.3 1.3C10.3 22.1 1.9 13.7 1.9 3.3 1.9 2.6 2.5 2 3.2 2h3.6c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg></span><a href="tel:+5592534846021">(92) 3348-4602 | (92) 99365-2007</a></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 8 8-5.3V7L12 12.2 4 7v.7L12 13Z"/></svg></span><a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a></div>
           </div>
-          <form id="contact-form">
-            <label for="name">Nome</label>
-            <input id="name" name="nome" autocomplete="name" placeholder="Nome" required>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="mensagem" placeholder="Mensagem" required></textarea>
-            <button class="submit" type="submit">Enviar sua mensagem</button>
-          </form>
+          <div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=Edif%C3%ADcio%20Skye%20Platinum%20Offices%20Manaus&output=embed" title="Mapa do escritório Hildebrando & Leite"></iframe></div>
         </div>
+        <form id="contact-form">
+          <label for="name">Nome</label>
+          <input id="name" name="nome" autocomplete="name" placeholder="Seu nome" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required>
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="mensagem" placeholder="Descreva brevemente sua demanda" required></textarea>
+          <button class="btn submit" type="submit">Enviar mensagem</button>
+        </form>
       </div>
     </section>
   </main>
@@ -1029,10 +901,10 @@
     <div class="wrap">
       <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
       <p>©2026 Hildebrando & Leite - Todos os Direitos Reservados.</p>
-      <div class="socials" aria-label="Redes sociais do rodapé">
-        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5-2.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
-        <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM3 9h4v12H3V9Zm6.2 0H13v1.64h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg></a>
-        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.2 17.6L1 23l5.5-1.4A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.9.9-3.2-.2-.3A8 8 0 1 1 12 20Zm4.5-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.4.1-.6l-.7-1.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s1 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1 0-.2-.2-.3-.4-.4Z"/></svg></a>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm4.5 5.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Z"/></svg></a>
+        <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M3 9h4v12H3V9Zm6.2 0H13v1.64h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg></a>
+        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.2 17.6L1 23l5.5-1.4A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"/></svg></a>
       </div>
     </div>
   </footer>
@@ -1054,67 +926,6 @@
         menuButton.setAttribute("aria-expanded", "false");
       });
     });
-
-    const areaTrack = document.querySelector(".area-track");
-    const areaCards = Array.from(document.querySelectorAll(".area-card"));
-    const prevArea = document.querySelector("[data-area-prev]");
-    const nextArea = document.querySelector("[data-area-next]");
-    const dotsWrap = document.querySelector(".carousel-dots");
-    let areaIndex = 0;
-
-    function cardsPerView() {
-      if (window.matchMedia("(max-width: 680px)").matches) return 1;
-      if (window.matchMedia("(max-width: 980px)").matches) return 2;
-      return 3;
-    }
-
-    function maxAreaIndex() {
-      return Math.max(0, areaCards.length - cardsPerView());
-    }
-
-    function renderDots() {
-      dotsWrap.innerHTML = "";
-      for (let i = 0; i <= maxAreaIndex(); i += 1) {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = `carousel-dot${i === areaIndex ? " is-active" : ""}`;
-        dot.setAttribute("aria-label", `Ir para slide ${i + 1}`);
-        dot.addEventListener("click", () => {
-          areaIndex = i;
-          updateAreas();
-        });
-        dotsWrap.appendChild(dot);
-      }
-    }
-
-    function updateAreas() {
-      areaIndex = Math.min(areaIndex, maxAreaIndex());
-      const cardWidth = areaCards[0].getBoundingClientRect().width;
-      const gap = Number.parseFloat(getComputedStyle(areaTrack).gap) || 0;
-      areaTrack.style.transform = `translateX(${-areaIndex * (cardWidth + gap)}px)`;
-      Array.from(dotsWrap.children).forEach((dot, index) => {
-        dot.classList.toggle("is-active", index === areaIndex);
-      });
-      prevArea.disabled = areaIndex === 0;
-      nextArea.disabled = areaIndex === maxAreaIndex();
-    }
-
-    prevArea.addEventListener("click", () => {
-      areaIndex = Math.max(0, areaIndex - 1);
-      updateAreas();
-    });
-
-    nextArea.addEventListener("click", () => {
-      areaIndex = Math.min(maxAreaIndex(), areaIndex + 1);
-      updateAreas();
-    });
-
-    window.addEventListener("resize", () => {
-      renderDots();
-      updateAreas();
-    });
-    renderDots();
-    updateAreas();
 
     document.querySelector("#contact-form").addEventListener("submit", (event) => {
       event.preventDefault();
