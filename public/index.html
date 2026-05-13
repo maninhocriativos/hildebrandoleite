@@ -15,6 +15,8 @@
       --navy-2: #00182b;
       --navy-3: #0b263f;
       --aqua: #15495b;
+      --blue: #4d83ff;
+      --blue-2: #6da0ff;
       --paper: #ffffff;
       --ink: #071827;
       --muted: #d8e3ea;
@@ -69,8 +71,8 @@
     .topbar .wrap {
       align-items: center;
       display: grid;
-      gap: 28px;
-      grid-template-columns: 110px auto 1fr auto;
+      gap: 30px;
+      grid-template-columns: 86px auto 1fr;
       min-height: 110px;
     }
 
@@ -106,8 +108,9 @@
     }
 
     .desktop-nav {
+      align-items: center;
       display: flex;
-      gap: clamp(18px, 3vw, 42px);
+      gap: clamp(18px, 2.4vw, 36px);
       justify-content: flex-end;
     }
 
@@ -115,7 +118,7 @@
     .account-button,
     .mobile-nav a {
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.01em;
       text-transform: uppercase;
     }
@@ -128,7 +131,9 @@
 
     .account-button {
       border: 1px solid rgba(255, 255, 255, 0.36);
-      padding: 11px 16px;
+      min-width: 224px;
+      padding: 17px 18px;
+      text-align: center;
       white-space: nowrap;
     }
 
@@ -216,14 +221,19 @@
 
     .cta {
       align-items: center;
-      background: #fff;
-      color: var(--navy);
+      background: linear-gradient(135deg, #5e8cff, #477cff);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 0 28px rgba(77, 131, 255, 0.46);
+      color: #fff;
       display: inline-flex;
-      font-size: 13px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 14px;
       font-weight: 700;
       justify-content: center;
-      min-height: 42px;
-      padding: 0 18px;
+      letter-spacing: 0.04em;
+      min-height: 58px;
+      min-width: 254px;
+      padding: 0 28px;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -275,17 +285,19 @@
     }
 
     .button {
-      background: var(--navy);
-      border: 0;
+      background: linear-gradient(135deg, #5e8cff, #477cff);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 30px rgba(77, 131, 255, 0.36);
       color: #fff;
       display: inline-flex;
-      font-size: 15px;
-      font-weight: 300;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
       justify-content: center;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.05em;
       margin-top: 18px;
-      min-width: min(100%, 542px);
-      padding: 14px 22px;
+      min-width: min(100%, 292px);
+      padding: 18px 22px;
       text-transform: uppercase;
     }
 
@@ -316,7 +328,20 @@
       background:
         radial-gradient(circle at top left, rgba(21, 73, 91, 0.52), transparent 34%),
         var(--navy);
-      padding: 44px 0 78px;
+      padding: 62px 0 78px;
+    }
+
+    .section-heading {
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      margin: 0 0 34px;
+      text-align: center;
+    }
+
+    .section-heading span {
+      color: #85a8ff;
+    }
     }
 
     .area-carousel {
@@ -331,30 +356,44 @@
     }
 
     .area-card {
-      background: #021b31;
+      background: linear-gradient(180deg, rgba(13, 37, 60, 0.94), rgba(2, 27, 49, 0.98));
       border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 16px;
+      border-radius: 8px;
       box-shadow: var(--shadow);
       flex: 0 0 calc((100% - 56px) / 3);
-      min-height: 414px;
-      padding: 58px 34px 30px;
+      min-height: 520px;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .area-card img {
+      aspect-ratio: 16 / 9;
+      display: block;
+      filter: saturate(0.92) brightness(0.78);
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .area-content {
+      padding: 32px 24px 28px;
     }
 
     .area-card h3 {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: clamp(28px, 3vw, 38px);
+      color: #fff;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: clamp(24px, 2.7vw, 34px);
       font-weight: 700;
-      margin-bottom: 24px;
-      text-align: center;
-      text-transform: uppercase;
+      line-height: 1.06;
+      margin-bottom: 18px;
+      text-align: left;
     }
 
     .area-card p {
-      color: #fff;
-      font-size: 13px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
       font-weight: 500;
-      line-height: 1.18;
-      margin: 0 0 18px;
+      line-height: 1.52;
+      margin: 0 0 12px;
       text-align: left;
     }
 
@@ -411,7 +450,7 @@
 
     .partners-section {
       background: var(--navy);
-      padding: 46px 0 52px;
+      padding: 62px 0 64px;
     }
 
     .partners {
@@ -421,12 +460,15 @@
     }
 
     .partner-card {
-      background: #0d253c;
+      background: linear-gradient(180deg, #0d253c 0%, #0b2136 100%);
       border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
       box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2);
-      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
       overflow: hidden;
-      padding: 38px 18px 24px;
+      padding: 34px 18px 28px;
       position: relative;
       text-align: center;
       transform: translateY(0);
@@ -458,12 +500,12 @@
     .portrait {
       border: 8px solid #0d4558;
       border-radius: 50%;
-      height: 300px;
-      margin: 0 auto 30px;
+      height: 286px;
+      margin: 0 auto 28px;
       object-fit: cover;
       object-position: center top;
       transition: transform 420ms ease, border-color 280ms ease;
-      width: 300px;
+      width: 286px;
     }
 
     .partner-card:hover .portrait {
@@ -475,7 +517,7 @@
       color: #fff;
       font-size: 21px;
       font-weight: 700;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       text-transform: uppercase;
     }
 
@@ -484,7 +526,8 @@
       display: inline-flex;
       font-size: 24px;
       font-weight: 800;
-      margin-bottom: 34px;
+      justify-content: center;
+      margin-bottom: 28px;
     }
 
     .partner-card p {
@@ -494,6 +537,10 @@
       line-height: 1.42;
       margin: 0;
       text-align: justify;
+    }
+
+    .partner-copy {
+      margin-top: auto;
     }
 
     .contact {
@@ -641,7 +688,27 @@
       text-align: center;
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1160px) {
+      .topbar .wrap {
+        gap: 22px;
+      }
+
+      .desktop-nav {
+        gap: 18px;
+      }
+
+      .desktop-nav a,
+      .account-button {
+        font-size: 13px;
+      }
+
+      .account-button {
+        min-width: 190px;
+        padding: 15px 14px;
+      }
+    }
+
+    @media (max-width: 980px) {
       .topbar .wrap {
         grid-template-columns: 78px 1fr 44px;
         min-height: 84px;
@@ -739,6 +806,7 @@
 
       .area-card {
         flex-basis: 100%;
+        min-height: 0;
       }
 
       .contact {
@@ -813,34 +881,48 @@
     <div class="section-label" id="areasdeatuacao">Áreas de Atuação</div>
     <section class="areas">
       <div class="wrap">
+        <h2 class="section-heading">Algumas de nossas <span>especialidades:</span></h2>
         <div class="area-carousel" aria-label="Carrossel de áreas de atuação">
           <div class="area-track">
           <article class="area-card">
-            <h3>Cível</h3>
-            <p>Família e Sucessões</p>
-            <p>Vasta experiência em causas de alta complexidade, atuando inclusive em tribunais e instâncias superiores, nas áreas familiar e sucessória nos âmbitos contencioso e consultivo.</p>
-            <p>Especializados em divórcio, pensão alimentícia, guarda, união estável, partilha de bens, inventários judicial e extrajudicial, e demandas relacionadas a planejamento sucessório e inventário.</p>
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Civel-1.png" alt="Direito Cível">
+            <div class="area-content">
+              <h3>Direito Cível</h3>
+              <p>Família e Sucessões</p>
+              <p>Vasta experiência em causas de alta complexidade, atuando em tribunais e instâncias superiores, nas áreas familiar e sucessória em demandas consultivas e contenciosas.</p>
+            </div>
           </article>
           <article class="area-card">
-            <h3>Administrativo</h3>
-            <p>O escritório se destaca pela experiência nos mais diversos processos administrativos junto às agências reguladoras e demais órgãos e autarquias em todas as esferas.</p>
-            <p>Oferecemos assessoria jurídica especializada em processos administrativos disciplinares, contratações, defesas, impugnações, fiscalizações e ações judiciais em matéria de Direito Administrativo.</p>
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Administrativo-2.png" alt="Direito Administrativo">
+            <div class="area-content">
+              <h3>Direito Administrativo</h3>
+              <p>Atuação junto a agências reguladoras, órgãos públicos e autarquias em todas as esferas.</p>
+              <p>Assessoria em processos administrativos, contratações, defesas, impugnações, fiscalizações e ações judiciais estratégicas.</p>
+            </div>
           </article>
           <article class="area-card">
-            <h3>Trabalhista</h3>
-            <p>Atuação consultiva e contenciosa para empresas, trabalhadores e sindicatos patronais e profissionais dos mais diversos segmentos.</p>
-            <p>Experiência em causas de alta complexidade, tribunais superiores, Ministério Público do Trabalho, procedimentos investigatórios e ações civis públicas.</p>
-            <p>Compliance Trabalhista com foco na mitigação de riscos, passivos e demandas trabalhistas.</p>
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Trabalhista-3.png" alt="Direito Trabalhista">
+            <div class="area-content">
+              <h3>Direito Trabalhista</h3>
+              <p>Atuação consultiva e contenciosa para empresas, trabalhadores e sindicatos.</p>
+              <p>Compliance Trabalhista, mitigação de riscos, defesa em alta complexidade e acompanhamento junto ao Ministério Público do Trabalho.</p>
+            </div>
           </article>
           <article class="area-card">
-            <h3>Previdenciário</h3>
-            <p>Atuação administrativa e judicial em benefícios, revisões e planejamento previdenciário.</p>
-            <p>Condução estratégica de requerimentos, recursos e ações previdenciárias, com análise documental cuidadosa e orientação clara para cada etapa.</p>
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Previdenciario-1.png" alt="Direito Previdenciário">
+            <div class="area-content">
+              <h3>Direito Previdenciário</h3>
+              <p>Atuação administrativa e judicial em benefícios, revisões e planejamento previdenciário.</p>
+              <p>Condução estratégica de requerimentos, recursos e ações, com análise documental cuidadosa e orientação clara.</p>
+            </div>
           </article>
           <article class="area-card">
-            <h3>Consumidor</h3>
-            <p>Demandas individuais e coletivas com estratégia preventiva e contenciosa.</p>
-            <p>Atuação em conflitos de consumo, responsabilidade civil e proteção de direitos, buscando soluções eficientes e bem documentadas.</p>
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Consumidor-1.png" alt="Direito do Consumidor">
+            <div class="area-content">
+              <h3>Direito do Consumidor</h3>
+              <p>Demandas individuais e coletivas com estratégia preventiva e contenciosa.</p>
+              <p>Atuação em conflitos de consumo, responsabilidade civil e proteção de direitos com seriedade e eficiência.</p>
+            </div>
           </article>
           </div>
         </div>
@@ -860,19 +942,19 @@
             <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Miriã Hildebrando">
             <h3>Miriã Hildebrando</h3>
             <a class="linkedin" href="#" aria-label="LinkedIn de Miriã Hildebrando">in</a>
-            <p>Sócia Fundadora e Diretora Administrativa<br>Advogada, com mais de 15 anos de atuação expressiva em Direito Coletivo Sindical, com sindicatos patronais e profissionais, das mais diversas áreas, além de experiência no direcionamento empresarial em relação de negócios e planejamentos, buscando aprimorar a performance estratégica das atividades empresariais.</p>
+            <div class="partner-copy"><p>Sócia Fundadora e Diretora Administrativa<br>Advogada, com mais de 15 anos de atuação expressiva em Direito Coletivo Sindical, com sindicatos patronais e profissionais, das mais diversas áreas, além de experiência no direcionamento empresarial em relação de negócios e planejamentos, buscando aprimorar a performance estratégica das atividades empresariais.</p></div>
           </article>
           <article class="partner-card">
             <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natália Hildebrando">
             <h3>Natália Hildebrando</h3>
             <a class="linkedin" href="#" aria-label="LinkedIn de Natália Hildebrando">in</a>
-            <p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo - Diretora Operacional<br>Especialista em Direito do Trabalho e em Direito Empresarial, com ampla experiência em Compliance Trabalhista, com foco na mitigação de riscos e passivos, além de intensa atuação em Direito Coletivo do Trabalho junto aos Sindicatos das mais diversas categorias, patronais e profissionais.</p>
+            <div class="partner-copy"><p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo - Diretora Operacional<br>Especialista em Direito do Trabalho e em Direito Empresarial, com ampla experiência em Compliance Trabalhista, com foco na mitigação de riscos e passivos, além de intensa atuação em Direito Coletivo do Trabalho junto aos Sindicatos das mais diversas categorias, patronais e profissionais.</p></div>
           </article>
           <article class="partner-card">
             <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Ângela Leite">
             <h3>Ângela Leite</h3>
             <a class="linkedin" href="#" aria-label="LinkedIn de Ângela Leite">in</a>
-            <p>Sócia Coordenadora das áreas Cível e Previdenciário - Diretora Comercial<br>Advogada militante há mais de 15 anos, especialista em negociações, condução de audiências em causas de alta complexidade e negociações sindicais, com atuação diferenciada em direito de família, na condução de processos de divórcios, inventários judicial e extrajudicial e ampla experiência em direito previdenciário nas esferas administrativa e judicial.</p>
+            <div class="partner-copy"><p>Sócia Coordenadora das áreas Cível e Previdenciário - Diretora Comercial<br>Advogada militante há mais de 15 anos, especialista em negociações, condução de audiências em causas de alta complexidade e negociações sindicais, com atuação diferenciada em direito de família, na condução de processos de divórcios, inventários judicial e extrajudicial e ampla experiência em direito previdenciário nas esferas administrativa e judicial.</p></div>
           </article>
         </div>
       </div>
