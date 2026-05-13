@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hildebrando e Leite</title>
-  <meta name="description" content="Escritorio especializado em Direito do Trabalho, Direito Administrativo, Civel, Previdenciario e Consumidor em Manaus.">
+  <title>Hildebrando & Leite Advogados Associados</title>
+  <meta name="description" content="Escritório especializado em Direito do Trabalho, Cível, Administrativo, Previdenciário e Consumidor em Manaus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png">
   <style>
     :root {
-      --ink: #15120f;
-      --paper: #fbf8f2;
-      --muted: #6d6257;
-      --gold: #b68a45;
-      --gold-dark: #8d682d;
-      --line: #e8dfd1;
+      --navy: #012138;
+      --navy-deep: #001a2e;
+      --card: #071d33;
+      --text: #ffffff;
+      --muted: #dce5ea;
+      --line: #152e43;
     }
 
     * {
@@ -25,385 +28,641 @@
     }
 
     body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      font-family: "Montserrat", Arial, sans-serif;
       margin: 0;
     }
 
     a {
       color: inherit;
-    }
-
-    .topbar {
-      align-items: center;
-      background: rgba(251, 248, 242, 0.96);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      gap: 24px;
-      justify-content: space-between;
-      left: 0;
-      padding: 14px clamp(20px, 5vw, 72px);
-      position: sticky;
-      right: 0;
-      top: 0;
-      z-index: 10;
-    }
-
-    .brand {
-      align-items: center;
-      display: flex;
-      gap: 12px;
       text-decoration: none;
     }
 
-    .brand img {
-      height: 54px;
-      width: auto;
+    .wrap {
+      margin: 0 auto;
+      max-width: 1160px;
+      padding: 0 24px;
+      width: 100%;
     }
 
-    .brand strong {
-      font-size: 16px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .topbar {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .topbar .wrap {
+      align-items: center;
+      display: grid;
+      gap: 28px;
+      grid-template-columns: 110px auto 1fr;
+      min-height: 122px;
+    }
+
+    .logo img {
+      display: block;
+      height: 72px;
+      object-fit: contain;
+      width: 72px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social {
+      align-items: center;
+      background: #fff;
+      border-radius: 50%;
+      color: var(--navy);
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 800;
+      height: 30px;
+      justify-content: center;
+      width: 30px;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
+      gap: clamp(18px, 3vw, 42px);
       justify-content: flex-end;
     }
 
     nav a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
     }
 
     nav a:hover {
-      color: var(--gold-dark);
+      opacity: 0.72;
     }
 
     .hero {
-      align-items: center;
+      background: #061f37 url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-03.jpg") center center / cover no-repeat;
+      border-bottom: 4px solid #f4f4f4;
+      min-height: 522px;
+    }
+
+    .institutional {
       background:
-        linear-gradient(90deg, rgba(21, 18, 15, 0.9), rgba(21, 18, 15, 0.6)),
-        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png") center 30% / cover;
-      color: #fff;
-      display: grid;
-      min-height: 680px;
-      padding: 96px clamp(24px, 6vw, 96px);
+        linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.96) 36%, rgba(255, 255, 255, 0.72) 58%, rgba(255, 255, 255, 0.16) 100%),
+        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg") center center / cover no-repeat;
+      color: var(--navy);
+      min-height: 477px;
+      padding: 10px 0 28px;
     }
 
-    .hero-content {
-      max-width: 760px;
+    .top-rule {
+      background: #666;
+      height: 3px;
+      margin: 0 auto 34px;
+      max-width: 1140px;
+      width: 62%;
     }
 
-    .eyebrow {
-      color: #e5c78f;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      margin: 0 0 18px;
+    .institutional-copy {
+      max-width: 560px;
+      padding-left: 6px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cinzel", Georgia, serif;
+      line-height: 1.04;
+      margin: 0;
+    }
+
+    .institutional h1 {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 600;
+      margin-bottom: 24px;
       text-transform: uppercase;
     }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 7vw, 92px);
-      line-height: 0.98;
-      margin: 0 0 26px;
-      max-width: 900px;
-    }
-
-    .hero p {
-      color: #f4ebdc;
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.45;
-      margin: 0 0 34px;
-      max-width: 720px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+    .institutional p {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.48;
+      margin: 0 0 16px;
+      text-align: justify;
     }
 
     .button {
-      background: var(--gold);
-      border: 1px solid var(--gold);
+      background: var(--navy);
+      border: 0;
       color: #fff;
       display: inline-flex;
-      font-size: 14px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 300;
       justify-content: center;
-      min-width: 180px;
-      padding: 15px 20px;
-      text-decoration: none;
+      letter-spacing: 0.28em;
+      margin-top: 18px;
+      min-width: min(100%, 542px);
+      padding: 13px 22px;
       text-transform: uppercase;
     }
 
-    .button.secondary {
-      background: transparent;
-      border-color: rgba(255, 255, 255, 0.62);
-    }
-
-    section {
-      padding: 86px clamp(24px, 6vw, 96px);
-    }
-
-    .section-dark {
-      background: #181511;
-      color: #fff;
-    }
-
-    .section-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.05;
-      margin: 0 0 24px;
-    }
-
-    .copy {
-      color: var(--muted);
+    .section-label {
+      align-items: center;
+      background: #fff;
+      color: #6d7a87;
+      display: flex;
+      font-family: "Cinzel", Georgia, serif;
       font-size: 18px;
-      line-height: 1.75;
-      margin: 0;
-      max-width: 980px;
+      justify-content: center;
+      min-height: 44px;
+      text-transform: uppercase;
     }
 
-    .section-dark .copy {
-      color: #ded3c3;
+    .section-label::before,
+    .section-label::after {
+      background: currentColor;
+      content: "";
+      display: inline-block;
+      height: 4px;
+      margin: 0 8px;
+      max-width: 180px;
+      width: 18vw;
+    }
+
+    .areas {
+      background: var(--navy);
+      padding: 44px 0 78px;
     }
 
     .area-grid {
       display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(5, minmax(150px, 1fr));
-      margin-top: 38px;
+      gap: 28px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .area-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      display: grid;
-      min-height: 210px;
-      overflow: hidden;
-      text-decoration: none;
+      background: #021b31;
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      min-height: 414px;
+      padding: 58px 34px 30px;
     }
 
-    .area-card img {
-      aspect-ratio: 1 / 1;
-      display: block;
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
+    .area-card h3 {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .area-card p {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.16;
+      margin: 0 0 18px;
+      text-align: left;
+    }
+
+    .dots {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .dot {
+      background: #001626;
+      border-radius: 50%;
+      height: 6px;
+      opacity: 0.7;
+      width: 6px;
+    }
+
+    .dot.active {
+      background: #fff;
+      opacity: 1;
+    }
+
+    .partners-section {
+      background: var(--navy);
+      padding: 0 0 36px;
+    }
+
+    .partners-nav {
+      align-items: center;
+      display: grid;
+      gap: 28px;
+      grid-template-columns: 110px auto 1fr;
+      margin-bottom: 30px;
+      min-height: 86px;
+    }
+
+    .partners-nav nav {
+      justify-content: flex-end;
     }
 
     .partners {
       display: grid;
       gap: 24px;
-      grid-template-columns: repeat(3, minmax(220px, 1fr));
-      margin-top: 38px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .partner {
-      background: #fff;
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
+    .partner-card {
+      background: #0d253c;
+      min-height: 650px;
+      padding: 38px 18px 18px;
+      text-align: center;
     }
 
-    .partner img {
-      aspect-ratio: 1 / 1;
+    .portrait {
+      border: 8px solid #0d4558;
+      border-radius: 50%;
+      height: 300px;
+      margin: 0 auto 30px;
       object-fit: cover;
-      width: 100%;
+      object-position: center top;
+      width: 300px;
     }
 
-    .partner-body {
-      padding: 24px;
+    .partner-card h3 {
+      color: #fff;
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
-    .partner h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      margin: 0 0 12px;
+    .linkedin {
+      color: #fff;
+      display: inline-flex;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 36px;
     }
 
-    .partner p {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
+    .partner-card p {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.42;
       margin: 0;
+      text-align: justify;
     }
 
     .contact {
-      display: grid;
-      gap: 34px;
-      grid-template-columns: 1.1fr 0.9fr;
+      background:
+        linear-gradient(90deg, rgba(1, 33, 56, 0.18), rgba(1, 10, 19, 0.66)),
+        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-CONTATO.png") center center / cover no-repeat;
+      color: #fff;
+      min-height: 544px;
+      padding: 38px 0 42px;
     }
 
-    .contact-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 30px;
+    .contact-grid {
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 43% 1fr;
+    }
+
+    .contact h2 {
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      margin: 0 0 22px;
     }
 
     .contact-list {
       display: grid;
       gap: 18px;
-      margin: 24px 0 0;
     }
 
-    .contact-list a,
-    .contact-list span {
-      color: var(--muted);
-      line-height: 1.55;
-      text-decoration: none;
+    .contact-item {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 34px 1fr;
+    }
+
+    .contact-icon {
+      align-items: center;
+      display: flex;
+      font-size: 28px;
+      justify-content: center;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .map {
+      background: #e8edf0;
+      color: #d4372b;
+      height: 155px;
+      margin-top: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map iframe {
+      border: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    form {
+      margin-top: 82px;
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    input,
+    textarea {
+      border: 0;
+      border-radius: 0;
+      display: block;
+      font: 14px "Montserrat", Arial, sans-serif;
+      margin-bottom: 10px;
+      padding: 12px 16px;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 94px;
+      resize: vertical;
+    }
+
+    .submit {
+      background: #081226;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 13px;
+      text-transform: uppercase;
+      width: 100%;
     }
 
     footer {
+      background: var(--navy);
+      padding: 66px 0;
+    }
+
+    footer .wrap {
       align-items: center;
-      background: #0e0c0a;
-      color: #d8ccbc;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-      padding: 28px clamp(24px, 6vw, 96px);
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
     }
 
     footer img {
       height: 58px;
-      width: auto;
+      object-fit: contain;
+      width: 58px;
     }
 
-    @media (max-width: 900px) {
-      .topbar {
-        align-items: flex-start;
-        flex-direction: column;
+    footer p {
+      font-size: 14px;
+      margin: 0;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .topbar .wrap,
+      .partners-nav,
+      footer .wrap {
+        grid-template-columns: 1fr;
+        justify-items: center;
       }
 
       nav {
-        justify-content: flex-start;
+        justify-content: center;
       }
 
       .hero {
-        min-height: 560px;
+        min-height: 360px;
+      }
+
+      .institutional {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.86)),
+          url("https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg") center center / cover no-repeat;
       }
 
       .area-grid,
       .partners,
-      .contact {
+      .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .partner-card {
+        min-height: 0;
+      }
+
+      form {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar .wrap {
+        min-height: 0;
+        padding-bottom: 18px;
+        padding-top: 18px;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .socials {
+        order: 3;
+      }
+
+      .hero {
+        background-image: url("https://hildebrandoleite.com.br/wp-content/uploads/2025/03/Banner-mobile-Hildebrando-1.png");
+        min-height: 319px;
+      }
+
+      .institutional h1 {
+        font-size: 22px;
+      }
+
+      .portrait {
+        height: min(72vw, 300px);
+        width: min(72vw, 300px);
       }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Hildebrando e Leite">
-      <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
-      <strong>Hildebrando e Leite</strong>
-    </a>
-    <nav aria-label="Navegacao principal">
-      <a href="#home">Home</a>
-      <a href="#institucional">Institucional</a>
-      <a href="#socias">Socias</a>
-      <a href="#areasdeatuacao">Areas de Atuacao</a>
-      <a href="#faleconosco">Fale Conosco</a>
-    </nav>
+    <div class="wrap">
+      <a class="logo" href="#home" aria-label="Hildebrando & Leite">
+        <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
+      </a>
+      <div class="socials" aria-label="Redes sociais">
+        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+        <a class="social" href="#" aria-label="LinkedIn">in</a>
+        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
+      </div>
+      <nav aria-label="Navegação principal">
+        <a href="#home">Home</a>
+        <a href="#institucional">Institucional</a>
+        <a href="#socias">Sócias</a>
+        <a href="#areasdeatuacao">Áreas de Atuação</a>
+        <a href="#faleconosco">Fale Conosco</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <p class="eyebrow">Escritorio de advocacia em Manaus</p>
-        <h1>Hildebrando e Leite</h1>
-        <p>Atuacao estrategica para empresas, trabalhadores e entidades sindicais, com atendimento personalizado e foco em relacoes solidas de confianca.</p>
-        <div class="actions">
-          <a class="button" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
-          <a class="button secondary" href="#institucional">Conheca o escritorio</a>
+    <section class="hero" id="home" aria-label="Hildebrando & Leite Advogados Associados"></section>
+
+    <section class="institutional" id="institucional">
+      <div class="top-rule"></div>
+      <div class="wrap">
+        <div class="institutional-copy">
+          <h1>Escritório especializado<br>em Direito Trabalho.</h1>
+          <p>Atuamos na defesa dos interesses dos nossos clientes, sociedades empresárias, trabalhadores e sindicatos patronais e profissionais, assegurando um serviço diferenciado, focado em um atendimento personalizado. Ao oferecermos soluções que contribuem sempre para o melhor resultado pretendido, buscamos, incansavelmente, nosso maior propósito: desenvolver relações de confiança, sólidas e duradouras.</p>
+          <p>Nossa equipe, composta por profissionais de notável formação acadêmica, é responsável pela condução de temas contenciosos e processuais estratégicos, com a definição do planejamento processual e de resolução de disputas mais adequadas a cada caso.</p>
+          <p>Atendemos matérias contenciosas e consultivas estratégicas, em demandas administrativas, judiciais ou preventivas, com a emissão de pareceres e opiniões jurídicas.</p>
+          <a class="button" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Marque uma reunião</a>
         </div>
       </div>
     </section>
 
-    <section id="institucional">
-      <p class="eyebrow">Institucional</p>
-      <h2 class="section-title">Escritorio especializado em Direito do Trabalho.</h2>
-      <p class="copy">Atuamos na defesa dos interesses dos nossos clientes, sociedades empresarias, trabalhadores e sindicatos patronais e profissionais, assegurando um servico diferenciado, focado em atendimento personalizado. Ao oferecermos solucoes que contribuem para o melhor resultado pretendido, buscamos desenvolver relacoes de confianca, solidas e duradouras.</p>
-      <p class="copy">Nossa equipe, composta por profissionais de notavel formacao academica, conduz temas contenciosos e processuais estrategicos, com planejamento processual e resolucao de disputas adequados a cada caso.</p>
-    </section>
-
-    <section class="section-dark" id="areasdeatuacao">
-      <p class="eyebrow">Areas de Atuacao</p>
-      <h2 class="section-title">Atendimento consultivo, preventivo e contencioso.</h2>
-      <p class="copy">Demandas administrativas, judiciais e preventivas, com emissao de pareceres e opinioes juridicas para temas estrategicos.</p>
-      <div class="area-grid" aria-label="Areas de atuacao">
-        <a class="area-card" href="#faleconosco"><img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Previdenciario-1.png" alt="Direito Previdenciario"></a>
-        <a class="area-card" href="#faleconosco"><img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Civel-1.png" alt="Direito Civel"></a>
-        <a class="area-card" href="#faleconosco"><img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Administrativo-2.png" alt="Direito Administrativo"></a>
-        <a class="area-card" href="#faleconosco"><img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Trabalhista-3.png" alt="Direito Trabalhista"></a>
-        <a class="area-card" href="#faleconosco"><img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/Consumidor-1.png" alt="Direito do Consumidor"></a>
-      </div>
-    </section>
-
-    <section id="socias">
-      <p class="eyebrow">Nossas Socias</p>
-      <h2 class="section-title">Experiencia juridica com direcao estrategica.</h2>
-      <div class="partners">
-        <article class="partner">
-          <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Miria Hildebrando">
-          <div class="partner-body">
-            <h3>Miria Hildebrando</h3>
-            <p>Socia Fundadora e Diretora Administrativa. Advogada com mais de 15 anos de atuacao em Direito Coletivo Sindical, sindicatos patronais e profissionais, direcionamento empresarial e planejamento estrategico.</p>
-          </div>
-        </article>
-        <article class="partner">
-          <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natalia Hildebrando">
-          <div class="partner-body">
-            <h3>Natalia Hildebrando</h3>
-            <p>Socia Coordenadora da Area Trabalhista e Direito Administrativo. Especialista em Direito do Trabalho e Direito Empresarial, com experiencia em Compliance Trabalhista e Direito Coletivo do Trabalho.</p>
-          </div>
-        </article>
-        <article class="partner">
-          <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Angela Leite">
-          <div class="partner-body">
-            <h3>Angela Leite</h3>
-            <p>Socia Coordenadora das areas Civel e Previdenciario. Advogada militante ha mais de 15 anos, especialista em negociacoes, audiencias de alta complexidade, direito de familia e direito previdenciario.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="faleconosco">
-      <div class="contact">
-        <div>
-          <p class="eyebrow">Endereco e Contato</p>
-          <h2 class="section-title">Fale conosco</h2>
-          <p class="copy">Entre em contato para atendimento juridico em Manaus ou para direcionamento de demandas consultivas e contenciosas.</p>
+    <div class="section-label" id="areasdeatuacao">Áreas de Atuação</div>
+    <section class="areas">
+      <div class="wrap">
+        <div class="area-grid">
+          <article class="area-card">
+            <h3>Cível</h3>
+            <p>Família e Sucessões</p>
+            <p>Vasta experiência em causas de alta complexidade, atuando inclusive em tribunais e instâncias superiores, nas áreas familiar e sucessória nos âmbitos contencioso e consultivo.</p>
+            <p>Especializados em divórcio, pensão alimentícia, guarda, união estável, partilha de bens, inventários judicial e extrajudicial, e demandas relacionadas a planejamento sucessório e inventário.</p>
+          </article>
+          <article class="area-card">
+            <h3>Administrativo</h3>
+            <p>O escritório se destaca pela sua experiência nos mais diversos processos administrativos junto às agências reguladoras e demais órgãos e autarquias em todas as esferas.</p>
+            <p>Oferecendo assessoria jurídica especializada aos seus clientes em processos administrativos disciplinares, contratação e defesas, impugnações, acompanhamento de fiscalizações e ações judiciais em matéria de Direito Administrativo.</p>
+          </article>
+          <article class="area-card">
+            <h3>Trabalhista</h3>
+            <p>Atuação nas áreas consultiva e contenciosa para empresas, trabalhadores e sindicatos patronais e profissionais dos mais diversos segmentos com foco na solução dos conflitos.</p>
+            <p>Vasta experiência em causas de alta complexidade, atuando em tribunais e instâncias superiores, no Ministério Público do Trabalho e em procedimentos investigatórios e ações civis públicas.</p>
+            <p>Especialistas em Compliance Trabalhista, buscando desenvolvimento de soluções para redução contínua de riscos, passivos e demandas trabalhistas.</p>
+          </article>
         </div>
-        <div class="contact-card">
-          <strong>Hildebrando e Leite</strong>
-          <div class="contact-list">
-            <span>Av. Dr. Theomario Pinto da Costa, n. 811, Bairro Chapada, 13o andar, Sala 1301, Edificio Skye Platinum Offices, Manaus-AM</span>
-            <a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a>
-            <a href="https://wa.me/5592993652007" target="_blank" rel="noopener">WhatsApp: (92) 99365-2007</a>
-            <a href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener">Instagram: @hildebrandoeleite</a>
+        <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+      </div>
+    </section>
+
+    <section class="partners-section" id="socias">
+      <div class="wrap">
+        <div class="partners-nav">
+          <a class="logo" href="#home" aria-label="Hildebrando & Leite">
+            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
+          </a>
+          <div class="socials" aria-label="Redes sociais">
+            <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+            <a class="social" href="#" aria-label="LinkedIn">in</a>
+            <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
           </div>
+          <nav aria-label="Navegação das sócias">
+            <a href="#home">Home</a>
+            <a href="#institucional">Institucional</a>
+            <a href="#socias">Sócias</a>
+            <a href="#areasdeatuacao">Áreas de Atuação</a>
+            <a href="#faleconosco">Fale Conosco</a>
+          </nav>
+        </div>
+        <div class="partners">
+          <article class="partner-card">
+            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Miriã Hildebrando">
+            <h3>Miriã Hildebrando</h3>
+            <a class="linkedin" href="#" aria-label="LinkedIn de Miriã Hildebrando">in</a>
+            <p>Sócia Fundadora e Diretora Administrativa<br>Advogada, com mais de 15 anos de atuação expressiva em Direito Coletivo Sindical, com sindicatos patronais e profissionais, das mais diversas áreas, além de experiência no direcionamento empresarial em relação de negócios e planejamentos, buscando aprimorar a performance estratégica das atividades empresariais.</p>
+          </article>
+          <article class="partner-card">
+            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natália Hildebrando">
+            <h3>Natália Hildebrando</h3>
+            <a class="linkedin" href="#" aria-label="LinkedIn de Natália Hildebrando">in</a>
+            <p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo - Diretora Operacional<br>Especialista em Direito do Trabalho e em Direito Empresarial, com ampla experiência em Compliance Trabalhista, com foco na mitigação de riscos e passivos, além de intensa atuação em Direito Coletivo do Trabalho junto aos Sindicatos das mais diversas categorias, patronais e profissionais.</p>
+          </article>
+          <article class="partner-card">
+            <img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Ângela Leite">
+            <h3>Ângela Leite</h3>
+            <a class="linkedin" href="#" aria-label="LinkedIn de Ângela Leite">in</a>
+            <p>Sócia Coordenadora das áreas Cível e Previdenciário - Diretora Comercial<br>Advogada militante há mais de 15 anos, especialista em negociações, condução de audiências em causas de alta complexidade e negociações sindicais, com atuação diferenciada em direito de família, na condução de processos de divórcios, inventários judicial e extrajudicial e ampla experiência em direito previdenciário nas esferas administrativa e judicial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-label">Contato e Localização</div>
+    <section class="contact" id="faleconosco">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <h2>Endereço e Contato</h2>
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="contact-icon">●</span>
+                <span>Av. Dr. Theomário Pinto da Costa, nº 811, Bairro Chapada,<br>13º. andar, Sala 1301, Edifício Skye Platinum Offices<br>Bairro Chapada, Manaus-AM</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">☎</span>
+                <a href="tel:+5592534846021">(92) 3348-4602 | (92) 99365-2007</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a>
+              </div>
+            </div>
+            <div class="map">
+              <iframe loading="lazy" src="./hildebrandoleite.com.br_files/maps.html" title="Mapa do escritório"></iframe>
+            </div>
+          </div>
+          <form action="mailto:hl@hlassociados.com" method="post" enctype="text/plain">
+            <label for="name">Nome</label>
+            <input id="name" name="nome" autocomplete="name" placeholder="Nome">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Email">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="mensagem" placeholder="Mensagem"></textarea>
+            <button class="submit" type="submit">Enviar sua mensagem</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
-    <span>2026 Hildebrando e Leite. Todos os direitos reservados.</span>
+    <div class="wrap">
+      <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
+      <p>©2023 Desenvolvido por Agência Fusão - Todos os Direitos Reservados.</p>
+      <div class="socials" aria-label="Redes sociais do rodapé">
+        <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+        <a class="social" href="#" aria-label="LinkedIn">in</a>
+        <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
