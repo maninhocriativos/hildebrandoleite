@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local editor and OS files
+.vscode/
+.idea/
+
+# Cloudflare / Wrangler local state, if used later
+.wrangler/
+
