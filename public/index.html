@@ -435,6 +435,10 @@
       padding: 96px 0;
     }
 
+    .areas .wrap {
+      max-width: 1280px;
+    }
+
     .center-head {
       margin: 0 auto 38px;
       max-width: 780px;
@@ -453,21 +457,63 @@
       margin: 0;
     }
 
-    .practice-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
+    .practice-carousel {
       margin: 0 auto;
       max-width: 1180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .practice-carousel::before,
+    .practice-carousel::after {
+      bottom: 0;
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 92px;
+      z-index: 2;
+    }
+
+    .practice-carousel::before {
+      background: linear-gradient(90deg, var(--bg), rgba(0, 23, 35, 0));
+      left: 0;
+    }
+
+    .practice-carousel::after {
+      background: linear-gradient(270deg, var(--bg), rgba(0, 23, 35, 0));
+      right: 0;
+    }
+
+    .practice-grid {
+      animation: slidePractices 28s linear infinite;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .practice-carousel:hover .practice-grid {
+      animation-play-state: paused;
+    }
+
+    @keyframes slidePractices {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 10px));
+      }
     }
 
     .practice-card {
       background: rgba(8, 40, 62, 0.78);
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
-      flex: 0 1 358px;
-      min-height: 455px;
+      flex: 0 0 clamp(214px, 18vw, 224px);
+      min-height: 380px;
       overflow: hidden;
       transition: transform 280ms ease, border-color 280ms ease;
     }
@@ -486,24 +532,24 @@
     }
 
     .practice-card div {
-      padding: 24px 20px 26px;
+      padding: 20px 18px 24px;
     }
 
     .practice-card h3 {
       color: #fff;
-      font-size: clamp(22px, 1.7vw, 29px);
+      font-size: clamp(20px, 1.6vw, 24px);
       hyphens: none;
       line-height: 1.08;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       overflow-wrap: normal;
       word-break: normal;
     }
 
     .practice-card p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12.6px;
       font-weight: 500;
-      line-height: 1.68;
+      line-height: 1.58;
       margin: 0;
     }
 
@@ -721,8 +767,12 @@
         padding: 11px 15px;
       }
 
+      .practice-carousel {
+        max-width: 930px;
+      }
+
       .practice-card {
-        flex-basis: 330px;
+        flex-basis: 214px;
       }
     }
 
@@ -769,11 +819,12 @@
       }
 
       .practice-grid {
-        max-width: 460px;
+        animation-duration: 22s;
       }
 
       .practice-card {
-        flex-basis: 100%;
+        flex-basis: min(78vw, 300px);
+        min-height: 390px;
       }
     }
 
@@ -880,12 +931,19 @@
           <h2 class="section-title">Especialistas em diversas <span>áreas jurídicas</span></h2>
           <p>Uma estrutura enxuta, técnica e preparada para conduzir temas sensíveis com clareza, estratégia e discrição.</p>
         </div>
-        <div class="practice-grid">
+        <div class="practice-carousel" aria-label="Carrossel de areas juridicas">
+          <div class="practice-grid">
           <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito Cível"><div><h3>Direito Cível</h3><p>Família, sucessões, inventários, partilhas, divórcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
           <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo"><div><h3>Direito Administrativo</h3><p>Atuação junto a órgãos públicos, agências reguladoras, autarquias, processos administrativos e ações judiciais estratégicas.</p></div></article>
           <article class="practice-card"><img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
           <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito Previdenciário"><div><h3>Direito Previdenciário</h3><p>Benefícios, revisões, planejamento previdenciário, requerimentos administrativos e ações judiciais.</p></div></article>
           <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e proteção de direitos em relações de consumo.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/civil.png" alt=""><div><h3>Direito Civil</h3><p>Familia, sucessoes, inventarios, partilhas, divorcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/administrativo.png" alt=""><div><h3>Direito Administrativo</h3><p>Atuacao junto a orgaos publicos, agencias reguladoras, autarquias, processos administrativos e acoes judiciais estrategicas.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/trabalhista.png" alt=""><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/previdenciario.png" alt=""><div><h3>Direito Previdenciario</h3><p>Beneficios, revisoes, planejamento previdenciario, requerimentos administrativos e acoes judiciais.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/consumidor.png" alt=""><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e protecao de direitos em relacoes de consumo.</p></div></article>
+          </div>
         </div>
       </div>
     </section>
