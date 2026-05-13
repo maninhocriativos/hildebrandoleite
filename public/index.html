@@ -130,7 +130,9 @@
     }
 
     .account-button {
+      background: linear-gradient(135deg, #5e8cff, #477cff);
       border: 1px solid rgba(255, 255, 255, 0.36);
+      box-shadow: 0 0 24px rgba(77, 131, 255, 0.28);
       min-width: 224px;
       padding: 17px 18px;
       text-align: center;
@@ -331,22 +333,9 @@
       padding: 62px 0 78px;
     }
 
-    .section-heading {
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      margin: 0 0 34px;
-      text-align: center;
-    }
-
-    .section-heading span {
-      color: var(--blue-2);
-    }
-    }
-
     .area-carousel {
       margin: 0 auto;
-      max-width: 1112px;
+      max-width: 1100px;
       overflow: hidden;
       position: relative;
     }
@@ -354,6 +343,7 @@
     .area-track {
       display: flex;
       gap: 28px;
+      justify-content: center;
       transition: transform 520ms ease;
     }
 
@@ -362,7 +352,7 @@
       border: 1px solid rgba(255, 255, 255, 0.04);
       border-radius: 8px;
       box-shadow: var(--shadow);
-      flex: 0 0 calc((100% - 56px) / 3);
+      flex: 0 0 348px;
       min-height: 520px;
       overflow: hidden;
       padding: 0;
@@ -383,8 +373,8 @@
 
     .area-card h3 {
       color: #fff;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: clamp(24px, 2.7vw, 34px);
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(24px, 2.6vw, 32px);
       font-weight: 700;
       line-height: 1.06;
       margin-bottom: 18px;
@@ -410,8 +400,9 @@
 
     .carousel-btn {
       align-items: center;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: linear-gradient(135deg, #5e8cff, #477cff);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 22px rgba(77, 131, 255, 0.22);
       color: #fff;
       cursor: pointer;
       display: inline-flex;
@@ -422,7 +413,7 @@
     }
 
     .carousel-btn:hover {
-      background: rgba(255, 255, 255, 0.16);
+      background: linear-gradient(135deg, #72a0ff, #4d83ff);
     }
 
     .carousel-btn:disabled {
@@ -653,7 +644,7 @@
     }
 
     .submit {
-      background: #081226;
+      background: linear-gradient(135deg, #5e8cff, #477cff);
       border: 1px solid rgba(255, 255, 255, 0.22);
       color: #fff;
       cursor: pointer;
@@ -665,7 +656,7 @@
     }
 
     .submit:hover {
-      background: #12314f;
+      background: linear-gradient(135deg, #72a0ff, #4d83ff);
     }
 
     footer {
@@ -749,7 +740,11 @@
       }
 
       .area-card {
-        flex-basis: calc((100% - 28px) / 2);
+        flex-basis: 348px;
+      }
+
+      .area-carousel {
+        max-width: 724px;
       }
 
       form {
@@ -808,8 +803,12 @@
       }
 
       .area-card {
-        flex-basis: 100%;
+        flex-basis: min(100%, 348px);
         min-height: 0;
+      }
+
+      .area-carousel {
+        max-width: min(100%, 348px);
       }
 
       .contact {
@@ -881,14 +880,12 @@
       </div>
     </section>
 
-    <div class="section-label" id="areasdeatuacao">Áreas de Atuação</div>
-    <section class="areas">
+    <section class="areas" id="areasdeatuacao">
       <div class="wrap">
-        <h2 class="section-heading">Algumas de nossas <span>especialidades:</span></h2>
         <div class="area-carousel" aria-label="Carrossel de áreas de atuação">
           <div class="area-track">
           <article class="area-card">
-            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg" alt="Direito Cível">
+            <img src="./assets/areas/civil.png" alt="Direito Cível">
             <div class="area-content">
               <h3>Direito Cível</h3>
               <p>Família e Sucessões</p>
@@ -896,7 +893,7 @@
             </div>
           </article>
           <article class="area-card">
-            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-03.jpg" alt="Direito Administrativo">
+            <img src="./assets/areas/administrativo.png" alt="Direito Administrativo">
             <div class="area-content">
               <h3>Direito Administrativo</h3>
               <p>Atuação junto a agências reguladoras, órgãos públicos e autarquias em todas as esferas.</p>
@@ -904,7 +901,7 @@
             </div>
           </article>
           <article class="area-card">
-            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-CONTATO.png" alt="Direito Trabalhista">
+            <img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista">
             <div class="area-content">
               <h3>Direito Trabalhista</h3>
               <p>Atuação consultiva e contenciosa para empresas, trabalhadores e sindicatos.</p>
@@ -912,7 +909,7 @@
             </div>
           </article>
           <article class="area-card">
-            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/BANNER-SECUNDARIO.jpg" alt="Direito Previdenciário">
+            <img src="./assets/areas/previdenciario.png" alt="Direito Previdenciário">
             <div class="area-content">
               <h3>Direito Previdenciário</h3>
               <p>Atuação administrativa e judicial em benefícios, revisões e planejamento previdenciário.</p>
@@ -920,7 +917,7 @@
             </div>
           </article>
           <article class="area-card">
-            <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-CONTATO.png" alt="Direito do Consumidor">
+            <img src="./assets/areas/consumidor.png" alt="Direito do Consumidor">
             <div class="area-content">
               <h3>Direito do Consumidor</h3>
               <p>Demandas individuais e coletivas com estratégia preventiva e contenciosa.</p>
@@ -1040,7 +1037,7 @@
 
     function cardsPerView() {
       if (window.matchMedia("(max-width: 680px)").matches) return 1;
-      if (window.matchMedia("(max-width: 1040px)").matches) return 2;
+      if (window.matchMedia("(max-width: 980px)").matches) return 2;
       return 3;
     }
 
