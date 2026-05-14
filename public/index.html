@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hildebrando & Leite Advogados Associados</title>
-  <meta name="description" content="Escritório de advocacia em Manaus com atuação estratégica em Direito do Trabalho, Cível, Administrativo, Previdenciário e Consumidor.">
+  <meta name="description" content="EscritÃ³rio de advocacia em Manaus com atuaÃ§Ã£o estratÃ©gica em Direito do Trabalho, CÃ­vel, Administrativo, PrevidenciÃ¡rio e Consumidor.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -200,9 +200,8 @@
 
     .hero {
       background:
-        radial-gradient(circle at 78% 18%, rgba(100, 173, 255, 0.14), transparent 26%),
-        linear-gradient(90deg, rgba(0, 18, 31, 0.99) 0%, rgba(0, 18, 31, 0.88) 48%, rgba(0, 18, 31, 0.68) 100%),
-        url("https://hildebrandoleite.com.br/wp-content/uploads/2023/12/BANNER-03.jpg") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(0, 18, 31, 0.72) 0%, rgba(0, 18, 31, 0.34) 42%, rgba(0, 18, 31, 0.02) 68%),
+        url("./assets/areas/BANNER-01.png") center center / cover no-repeat;
       min-height: calc(100vh - 84px);
       padding: 88px 0 72px;
       position: relative;
@@ -220,17 +219,17 @@
 
     .hero-grid {
       align-items: center;
-      display: grid;
-      gap: 56px;
-      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.72fr);
+      display: block;
       min-height: 560px;
       position: relative;
       z-index: 1;
     }
 
     .hero-copy {
-      background: linear-gradient(90deg, rgba(0, 18, 31, 0.82), rgba(0, 18, 31, 0.3));
+      background: linear-gradient(90deg, rgba(0, 18, 31, 0.66), rgba(0, 18, 31, 0.08));
       border-left: 1px solid rgba(100, 173, 255, 0.4);
+      margin-top: 40px;
+      max-width: 650px;
       padding: 10px 0 10px 28px;
     }
 
@@ -320,10 +319,109 @@
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(8, 40, 62, 0.78), rgba(0, 18, 31, 0.88));
-      border: 1px solid rgba(100, 173, 255, 0.22);
-      box-shadow: var(--shadow);
-      padding: 30px;
+      display: none;
+    }
+
+    .hero-support {
+      align-items: center;
+      bottom: 34px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 48px minmax(0, 1fr);
+      left: 52px;
+      max-width: 460px;
+      position: absolute;
+    }
+
+    .support-icon {
+      align-items: center;
+      border: 2px solid var(--blue-2);
+      border-radius: 18px 18px 24px 24px;
+      color: var(--blue);
+      display: flex;
+      height: 48px;
+      justify-content: center;
+      width: 48px;
+    }
+
+    .support-icon svg {
+      fill: none;
+      height: 25px;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+      width: 25px;
+    }
+
+    .hero-support strong {
+      color: #fff;
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .hero-support span {
+      color: var(--muted);
+      display: block;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .hero-proof {
+      backdrop-filter: blur(12px);
+      background: rgba(7, 38, 62, 0.58);
+      border: 1px solid rgba(100, 173, 255, 0.26);
+      bottom: 92px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 760px;
+      padding: 24px 28px;
+      position: absolute;
+      right: 4px;
+      width: min(58vw, 760px);
+    }
+
+    .proof-item {
+      align-items: center;
+      border-left: 1px solid rgba(255, 255, 255, 0.13);
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 44px 1fr;
+      padding: 0 20px;
+    }
+
+    .proof-item:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .proof-item svg {
+      fill: none;
+      height: 34px;
+      stroke: var(--blue);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+      width: 34px;
+    }
+
+    .proof-item strong {
+      color: #fff;
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .proof-item span {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .hero-card h2 {
@@ -555,27 +653,110 @@
 
     .partners {
       background:
+        radial-gradient(circle at 82% 10%, rgba(100, 173, 255, 0.2), transparent 28%),
+        radial-gradient(circle at 8% 18%, rgba(100, 173, 255, 0.12), transparent 24%),
         linear-gradient(180deg, rgba(0, 23, 35, 0.72), rgba(0, 23, 35, 1)),
         var(--bg);
-      padding: 86px 0;
+      overflow: hidden;
+      padding: 96px 0 88px;
+    }
+
+    .team-head {
+      margin: 0 auto 34px;
+      max-width: 780px;
+      text-align: center;
+    }
+
+    .team-mark {
+      display: block;
+      filter: drop-shadow(0 0 16px rgba(100, 173, 255, 0.2));
+      height: 54px;
+      margin: 0 auto 18px;
+      object-fit: contain;
+      width: 54px;
+    }
+
+    .team-head h2 {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .team-rule {
+      align-items: center;
+      color: rgba(100, 173, 255, 0.78);
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 20px auto 18px;
+      max-width: 340px;
+    }
+
+    .team-rule::before,
+    .team-rule::after {
+      background: linear-gradient(90deg, transparent, rgba(100, 173, 255, 0.62));
+      content: "";
+      height: 1px;
+      width: 128px;
+    }
+
+    .team-rule::after {
+      background: linear-gradient(90deg, rgba(100, 173, 255, 0.62), transparent);
+    }
+
+    .team-rule span {
+      border: 1px solid rgba(100, 173, 255, 0.8);
+      height: 8px;
+      transform: rotate(45deg);
+      width: 8px;
+    }
+
+    .team-head p {
+      color: #91b7d8;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .partner-grid {
       display: grid;
-      gap: 24px;
+      gap: 30px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .partner-card {
-      background: linear-gradient(180deg, rgba(12, 48, 72, 0.94), rgba(8, 32, 52, 0.98));
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(19, 58, 88, 0.78), rgba(5, 31, 51, 0.96));
+      border: 1px solid rgba(100, 173, 255, 0.34);
+      border-radius: 22px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 28px 90px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       display: flex;
       flex-direction: column;
       min-height: 0;
-      padding: 34px 24px 28px;
+      padding: 30px 28px 32px;
+      position: relative;
       text-align: center;
       transition: transform 280ms ease, border-color 280ms ease;
+    }
+
+    .partner-card::before,
+    .partner-card::after {
+      background: linear-gradient(90deg, transparent, rgba(100, 173, 255, 0.95), transparent);
+      content: "";
+      height: 2px;
+      left: 22%;
+      position: absolute;
+      right: 22%;
+    }
+
+    .partner-card::before {
+      top: -1px;
+    }
+
+    .partner-card::after {
+      bottom: -1px;
     }
 
     .partner-card:hover {
@@ -584,36 +765,111 @@
     }
 
     .portrait {
-      border: 8px solid #0f5267;
-      border-radius: 50%;
-      height: 286px;
-      margin: 0 auto 28px;
+      background: #d9dce8;
+      border: 2px solid rgba(100, 173, 255, 0.82);
+      border-bottom-color: rgba(100, 173, 255, 0.62);
+      border-radius: 999px 999px 18px 18px;
+      box-shadow: 0 0 0 4px rgba(0, 23, 35, 0.85), 0 0 22px rgba(100, 173, 255, 0.22);
+      height: 242px;
+      margin: 0 auto 26px;
       object-fit: cover;
       object-position: center top;
-      width: 286px;
+      width: min(100%, 330px);
     }
 
     .partner-card h3 {
-      font-size: 21px;
-      margin-bottom: 18px;
+      align-items: center;
+      color: #fff;
+      display: flex;
+      font-size: 27px;
+      gap: 14px;
+      justify-content: center;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .partner-card h3::before,
+    .partner-card h3::after {
+      background: var(--blue);
+      border-radius: 50%;
+      content: "";
+      height: 5px;
+      width: 5px;
     }
 
     .linkedin {
+      align-items: center;
+      border: 1px solid rgba(100, 173, 255, 0.75);
+      border-radius: 50%;
       color: var(--blue);
       display: inline-flex;
-      font-size: 23px;
+      font-size: 18px;
       font-weight: 800;
       justify-content: center;
-      margin-bottom: 24px;
+      height: 34px;
+      margin: 0 auto 22px;
+      width: 34px;
+    }
+
+    .partner-divider {
+      align-items: center;
+      color: var(--blue);
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 0 auto 20px;
+      width: 70%;
+    }
+
+    .partner-divider::before,
+    .partner-divider::after {
+      background: rgba(100, 173, 255, 0.68);
+      content: "";
+      height: 1px;
+      width: 100%;
+    }
+
+    .partner-divider span {
+      background: var(--blue);
+      height: 4px;
+      transform: rotate(45deg);
+      width: 4px;
     }
 
     .partner-card p {
       color: #fff;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 500;
-      line-height: 1.65;
+      line-height: 1.68;
       margin: 0;
-      text-align: left;
+      text-align: center;
+    }
+
+    .partner-card p strong {
+      color: var(--blue);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .team-foot {
+      align-items: center;
+      color: rgba(145, 183, 216, 0.72);
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      letter-spacing: 0.22em;
+      margin-top: 44px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .team-foot::before,
+    .team-foot::after {
+      background: rgba(100, 173, 255, 0.52);
+      content: "";
+      height: 1px;
+      width: 180px;
     }
 
     .contact {
@@ -795,22 +1051,51 @@
       }
 
       .hero {
+        background-position: 60% center;
         min-height: auto;
         padding: 72px 0 54px;
       }
 
-      .hero-grid,
+      .hero-support {
+        grid-template-columns: 42px minmax(0, 1fr);
+      }
+
+      .support-icon {
+        height: 42px;
+        width: 42px;
+      }
+
       .split-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-copy {
+        margin-top: 0;
         padding-left: 22px;
       }
 
-      .hero-card dl {
+      .hero-support,
+      .hero-proof {
+        margin-top: 28px;
+        position: static;
+        width: 100%;
+      }
+
+      .hero-proof {
         grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .proof-item {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.13);
+        padding: 18px 0 0;
+      }
+
+      .proof-item:first-child {
+        border-top: 0;
+        padding-top: 0;
       }
 
       .partner-grid {
@@ -864,21 +1149,21 @@
         <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM3 9h4v12H3V9Zm6.2 0H13v1.64h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg></a>
         <a class="social" href="https://wa.me/5592993652007" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.2 17.6L1 23l5.5-1.4A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"/></svg></a>
       </div>
-      <nav class="main-nav" aria-label="Navegação principal">
+      <nav class="main-nav" aria-label="NavegaÃ§Ã£o principal">
         <a href="#home">Home</a>
         <a href="#institucional">Institucional</a>
-        <a href="#socias">Sócias</a>
-        <a href="#areasdeatuacao">Áreas</a>
+        <a href="#socias">SÃ³cias</a>
+        <a href="#areasdeatuacao">Ãreas</a>
         <a href="#faleconosco">Contato</a>
         <a class="account-pill" href="admin/">Acessar minha conta</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
     </div>
-    <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação mobile">
+    <nav class="mobile-nav" id="mobile-menu" aria-label="NavegaÃ§Ã£o mobile">
       <a href="#home">Home</a>
       <a href="#institucional">Institucional</a>
-      <a href="#socias">Sócias</a>
-      <a href="#areasdeatuacao">Áreas de Atuação</a>
+      <a href="#socias">SÃ³cias</a>
+      <a href="#areasdeatuacao">Ãreas de AtuaÃ§Ã£o</a>
       <a href="#faleconosco">Fale Conosco</a>
       <a href="admin/">Acessar minha conta</a>
     </nav>
@@ -888,23 +1173,32 @@
     <section class="hero" id="home">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Advocacia estratégica</p>
-          <h1>Hildebrando & Leite <span>Advogados</span></h1>
-          <p>Atuação jurídica consultiva e contenciosa com presença técnica, atendimento próximo e estratégia para empresas, trabalhadores, sindicatos e pessoas físicas em Manaus.</p>
+          <p class="eyebrow">Advocacia estratÃ©gica</p>
+          <h1>Solu&ccedil;&otilde;es jur&iacute;dicas estrat&eacute;gicas. <span>Resultados reais.</span></h1>
+          <p>Atua&ccedil;&atilde;o jur&iacute;dica consultiva e contenciosa com foco em empresas, neg&oacute;cios e pessoas que buscam seguran&ccedil;a, estrat&eacute;gia e excel&ecirc;ncia em cada decis&atilde;o.</p>
           <div class="cta-row">
-            <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Falar com advogado</a>
-            <a class="btn ghost" href="#areasdeatuacao">Ver áreas</a>
+            <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Falar com especialista</a>
+            <a class="btn ghost" href="#areasdeatuacao">Conhecer &aacute;reas</a>
           </div>
         </div>
         <aside class="hero-card">
           <h2>Advocacia empresarial, trabalhista e consultiva.</h2>
-          <p>Atendimento objetivo para decisÃµes jurÃ­dicas importantes, com discriÃ§Ã£o, preparo tÃ©cnico e conduÃ§Ã£o estratÃ©gica.</p>
+          <p>Atendimento objetivo para decisÃƒÂµes jurÃƒÂ­dicas importantes, com discriÃƒÂ§ÃƒÂ£o, preparo tÃƒÂ©cnico e conduÃƒÂ§ÃƒÂ£o estratÃƒÂ©gica.</p>
           <dl>
-            <div><dt>15+</dt><dd>anos de atuação jurídica estratégica</dd></div>
-            <div><dt>5</dt><dd>áreas principais de atendimento</dd></div>
-            <div><dt>AM</dt><dd>escritório em Manaus com atuação nacional</dd></div>
+            <div><dt>15+</dt><dd>anos de atuaÃ§Ã£o jurÃ­dica estratÃ©gica</dd></div>
+            <div><dt>5</dt><dd>Ã¡reas principais de atendimento</dd></div>
+            <div><dt>AM</dt><dd>escritÃ³rio em Manaus com atuaÃ§Ã£o nacional</dd></div>
           </dl>
         </aside>
+        <div class="hero-support">
+          <span class="support-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 6.5V12c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6.5L12 3Z"/><path d="m8.8 12.2 2.1 2.1 4.6-5"/></svg></span>
+          <div><strong>Atendimento personalizado</strong><span>Estrat&eacute;gia jur&iacute;dica sob medida para cada cliente.</span></div>
+        </div>
+        <div class="hero-proof" aria-label="Diferenciais do escrit&oacute;rio">
+          <div class="proof-item"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div><strong>15+</strong><span>Anos de atua&ccedil;&atilde;o com resultados</span></div></div>
+          <div class="proof-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10h14v11"/><path d="M4 10 12 3l8 7"/><path d="M9 21v-6h6v6"/></svg><div><strong>Atua&ccedil;&atilde;o Nacional</strong><span>Presen&ccedil;a em todo o Brasil</span></div></div>
+          <div class="proof-item"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg><div><strong>Confidencialidade</strong><span>Seguran&ccedil;a e sigilo em cada caso</span></div></div>
+        </div>
       </div>
     </section>
 
@@ -912,14 +1206,14 @@
       <div class="wrap split-grid">
         <div>
           <span class="section-kicker">Institucional</span>
-          <h2 class="section-title">Escritório especializado em <span>Direito do Trabalho.</span></h2>
-          <p>Atuamos na defesa dos interesses dos nossos clientes, sociedades empresárias, trabalhadores e sindicatos patronais e profissionais, assegurando um serviço diferenciado, focado em atendimento personalizado.</p>
-          <p>Nossa equipe, composta por profissionais de notável formação acadêmica, conduz temas contenciosos e processuais estratégicos, com planejamento processual adequado a cada caso.</p>
-          <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Marque uma reunião</a>
+          <h2 class="section-title">EscritÃ³rio especializado em <span>Direito do Trabalho.</span></h2>
+          <p>Atuamos na defesa dos interesses dos nossos clientes, sociedades empresÃ¡rias, trabalhadores e sindicatos patronais e profissionais, assegurando um serviÃ§o diferenciado, focado em atendimento personalizado.</p>
+          <p>Nossa equipe, composta por profissionais de notÃ¡vel formaÃ§Ã£o acadÃªmica, conduz temas contenciosos e processuais estratÃ©gicos, com planejamento processual adequado a cada caso.</p>
+          <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Marque uma reuniÃ£o</a>
         </div>
         <div class="feature-panel">
-          <h3>Atuação preventiva, consultiva e contenciosa.</h3>
-          <p>Demandas administrativas, judiciais e preventivas, com emissão de pareceres, opiniões jurídicas e condução técnica de processos de alta relevância.</p>
+          <h3>AtuaÃ§Ã£o preventiva, consultiva e contenciosa.</h3>
+          <p>Demandas administrativas, judiciais e preventivas, com emissÃ£o de pareceres, opiniÃµes jurÃ­dicas e conduÃ§Ã£o tÃ©cnica de processos de alta relevÃ¢ncia.</p>
         </div>
       </div>
     </section>
@@ -927,17 +1221,17 @@
     <section class="areas" id="areasdeatuacao">
       <div class="wrap">
         <div class="center-head">
-          <span class="section-kicker">Áreas de atuação</span>
-          <h2 class="section-title">Especialistas em diversas <span>áreas jurídicas</span></h2>
-          <p>Uma estrutura enxuta, técnica e preparada para conduzir temas sensíveis com clareza, estratégia e discrição.</p>
+          <span class="section-kicker">Ãreas de atuaÃ§Ã£o</span>
+          <h2 class="section-title">Especialistas em diversas <span>Ã¡reas jurÃ­dicas</span></h2>
+          <p>Uma estrutura enxuta, tÃ©cnica e preparada para conduzir temas sensÃ­veis com clareza, estratÃ©gia e discriÃ§Ã£o.</p>
         </div>
         <div class="practice-carousel" aria-label="Carrossel de areas juridicas">
           <div class="practice-grid">
-          <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito Cível"><div><h3>Direito Cível</h3><p>Família, sucessões, inventários, partilhas, divórcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo"><div><h3>Direito Administrativo</h3><p>Atuação junto a órgãos públicos, agências reguladoras, autarquias, processos administrativos e ações judiciais estratégicas.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito CÃ­vel"><div><h3>Direito CÃ­vel</h3><p>FamÃ­lia, sucessÃµes, inventÃ¡rios, partilhas, divÃ³rcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo"><div><h3>Direito Administrativo</h3><p>AtuaÃ§Ã£o junto a Ã³rgÃ£os pÃºblicos, agÃªncias reguladoras, autarquias, processos administrativos e aÃ§Ãµes judiciais estratÃ©gicas.</p></div></article>
           <article class="practice-card"><img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito Previdenciário"><div><h3>Direito Previdenciário</h3><p>Benefícios, revisões, planejamento previdenciário, requerimentos administrativos e ações judiciais.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e proteção de direitos em relações de consumo.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito PrevidenciÃ¡rio"><div><h3>Direito PrevidenciÃ¡rio</h3><p>BenefÃ­cios, revisÃµes, planejamento previdenciÃ¡rio, requerimentos administrativos e aÃ§Ãµes judiciais.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e proteÃ§Ã£o de direitos em relaÃ§Ãµes de consumo.</p></div></article>
             <article class="practice-card" aria-hidden="true"><img src="./assets/areas/civil.png" alt=""><div><h3>Direito Civil</h3><p>Familia, sucessoes, inventarios, partilhas, divorcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
             <article class="practice-card" aria-hidden="true"><img src="./assets/areas/administrativo.png" alt=""><div><h3>Direito Administrativo</h3><p>Atuacao junto a orgaos publicos, agencias reguladoras, autarquias, processos administrativos e acoes judiciais estrategicas.</p></div></article>
             <article class="practice-card" aria-hidden="true"><img src="./assets/areas/trabalhista.png" alt=""><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
@@ -950,15 +1244,18 @@
 
     <section class="partners" id="socias">
       <div class="wrap">
-        <div class="center-head">
-          <span class="section-kicker">Sócias</span>
-          <h2 class="section-title">Direção técnica com <span>experiência real</span></h2>
+        <div class="team-head">
+          <img class="team-mark" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
+          <h2>Nossa Equipe</h2>
+          <div class="team-rule"><span></span></div>
+          <p>Profissionais com experi&ecirc;ncia, estrat&eacute;gia e atua&ccedil;&atilde;o de excel&ecirc;ncia.</p>
         </div>
         <div class="partner-grid">
-          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Miriã Hildebrando"><h3>Miriã Hildebrando</h3><a class="linkedin" href="#">in</a><p>Sócia Fundadora e Diretora Administrativa. Advogada com mais de 15 anos de atuação em Direito Coletivo Sindical, direcionamento empresarial e planejamento estratégico.</p></article>
-          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Natália Hildebrando"><h3>Natália Hildebrando</h3><a class="linkedin" href="#">in</a><p>Sócia Coordenadora da Área Trabalhista e Direito Administrativo. Especialista em Direito do Trabalho e Direito Empresarial, com ampla experiência em Compliance Trabalhista.</p></article>
-          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="Ângela Leite"><h3>Ângela Leite</h3><a class="linkedin" href="#">in</a><p>Sócia Coordenadora das áreas Cível e Previdenciário. Advogada militante há mais de 15 anos, especialista em negociações, audiências de alta complexidade e direito de família.</p></article>
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1682-1.png" alt="Miri&atilde; Hildebrando"><h3>Miri&atilde; Hildebrando</h3><a class="linkedin" href="#">in</a><div class="partner-divider"><span></span></div><p><strong>S&oacute;cia Fundadora e Diretora Administrativa.</strong>Advogada com mais de 15 anos de atua&ccedil;&atilde;o em Direito Coletivo Sindical, direcionamento empresarial e planejamento estrat&eacute;gico.</p></article>
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1592.png" alt="Nat&aacute;lia Hildebrando"><h3>Nat&aacute;lia Hildebrando</h3><a class="linkedin" href="#">in</a><div class="partner-divider"><span></span></div><p><strong>S&oacute;cia Coordenadora da &Aacute;rea Trabalhista e Direito Administrativo.</strong>Especialista em Direito do Trabalho e Direito Empresarial, com ampla experi&ecirc;ncia em Compliance Trabalhista.</p></article>
+          <article class="partner-card"><img class="portrait" src="https://hildebrandoleite.com.br/wp-content/uploads/2023/12/IMG_1582-1.png" alt="&Acirc;ngela Leite"><h3>&Acirc;ngela Leite</h3><a class="linkedin" href="#">in</a><div class="partner-divider"><span></span></div><p><strong>S&oacute;cia Coordenadora das &aacute;reas C&iacute;vel e Previdenci&aacute;rio.</strong>Advogada militante h&aacute; mais de 15 anos, especialista em negocia&ccedil;&otilde;es, audi&ecirc;ncias de alta complexidade e direito de fam&iacute;lia.</p></article>
         </div>
+        <div class="team-foot">Excel&ecirc;ncia jur&iacute;dica. Resultados reais. Rela&ccedil;&otilde;es de confian&ccedil;a.</div>
       </div>
     </section>
 
@@ -968,11 +1265,11 @@
           <span class="section-kicker">Contato</span>
           <h2 class="section-title">Como podemos ajudar na sua demanda?</h2>
           <div class="contact-list">
-            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"/></svg></span><span>Av. Dr. Theomário Pinto da Costa, nº 811, Bairro Chapada, 13º andar, Sala 1301, Edifício Skye Platinum Offices, Manaus-AM</span></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"/></svg></span><span>Av. Dr. TheomÃ¡rio Pinto da Costa, nÂº 811, Bairro Chapada, 13Âº andar, Sala 1301, EdifÃ­cio Skye Platinum Offices, Manaus-AM</span></div>
             <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.6c0 .7-.6 1.3-1.3 1.3C10.3 22.1 1.9 13.7 1.9 3.3 1.9 2.6 2.5 2 3.2 2h3.6c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg></span><a href="tel:+5592534846021">(92) 3348-4602 | (92) 99365-2007</a></div>
             <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 8 8-5.3V7L12 12.2 4 7v.7L12 13Z"/></svg></span><a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a></div>
           </div>
-          <div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=Edif%C3%ADcio%20Skye%20Platinum%20Offices%20Manaus&output=embed" title="Mapa do escritório Hildebrando & Leite"></iframe></div>
+          <div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=Edif%C3%ADcio%20Skye%20Platinum%20Offices%20Manaus&output=embed" title="Mapa do escritÃ³rio Hildebrando & Leite"></iframe></div>
         </div>
         <form id="contact-form">
           <label for="name">Nome</label>
@@ -990,7 +1287,7 @@
   <footer>
     <div class="wrap">
       <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
-      <p>©2026 Hildebrando & Leite - Todos os Direitos Reservados.</p>
+      <p>Â©2026 Hildebrando & Leite - Todos os Direitos Reservados.</p>
       <div class="socials">
         <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm4.5 5.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Z"/></svg></a>
         <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M3 9h4v12H3V9Zm6.2 0H13v1.64h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg></a>
@@ -1021,7 +1318,7 @@
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       const text = [
-        "Olá, gostaria de atendimento jurídico.",
+        "OlÃ¡, gostaria de atendimento jurÃ­dico.",
         "",
         `Nome: ${data.get("nome")}`,
         `Email: ${data.get("email")}`,
@@ -1029,6 +1326,6 @@
       ].join("\n");
       window.open(`https://wa.me/5592993652007?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     });
-  </script>
+</script>
 </body>
 </html>
