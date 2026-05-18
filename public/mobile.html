@@ -1175,8 +1175,39 @@
     }
 
     @media (max-width: 920px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        text-align: center;
+      }
+
+      main,
+      section {
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .wrap {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: none;
+        padding: 0;
+        width: min(calc(100% - 32px), 358px);
+      }
+
       .nav-shell {
-        grid-template-columns: 70px 1fr 42px;
+        gap: 12px;
+        grid-template-columns: 52px 1fr 42px;
+        min-height: 72px;
+      }
+
+      .brand-symbol {
+        height: 48px;
+        width: 48px;
       }
 
       .site-header .socials,
@@ -1192,10 +1223,17 @@
         display: block;
       }
 
+      .mobile-nav {
+        text-align: center;
+      }
+
       .hero {
-        background-position: 60% center;
+        background:
+          linear-gradient(180deg, rgba(0, 18, 31, 0.86), rgba(0, 18, 31, 0.7) 56%, rgba(0, 18, 31, 0.88)),
+          linear-gradient(90deg, rgba(0, 18, 31, 0.95), rgba(0, 18, 31, 0.74) 62%, rgba(0, 18, 31, 0.5)),
+          url("./assets/areas/BANNER-01.png") 72% top / auto 100% no-repeat;
         min-height: auto;
-        padding: 72px 0 54px;
+        padding: 44px 0 52px;
       }
 
       .hero-grid {
@@ -1203,8 +1241,74 @@
         min-height: 0;
       }
 
+      .hero-copy {
+        background: none;
+        border-left: 0;
+        margin: 0 auto;
+        max-width: 318px;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        gap: 0;
+        justify-content: center;
+        letter-spacing: 0.14em;
+        margin-bottom: 12px;
+      }
+
+      .eyebrow::before {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(25px, 7vw, 30px);
+        letter-spacing: 0;
+        line-height: 1.05;
+        margin: 0 auto 16px;
+        max-width: 304px;
+        text-wrap: balance;
+      }
+
+      .hero h1 span {
+        display: block;
+      }
+
+      .hero p {
+        font-size: 14px;
+        line-height: 1.55;
+        margin: 0 auto 22px;
+        max-width: 286px;
+      }
+
+      .cta-row {
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .btn {
+        font-size: 12px;
+        min-height: 44px;
+        padding: 0 17px;
+        width: min(100%, 286px);
+      }
+
       .hero-support {
-        grid-template-columns: 42px minmax(0, 1fr);
+        align-items: center;
+        background: rgba(3, 32, 54, 0.42);
+        border: 1px solid rgba(100, 173, 255, 0.2);
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        padding: 18px;
+        text-align: center;
       }
 
       .support-icon {
@@ -1219,24 +1323,28 @@
 
       .contact-panel,
       form {
-        padding: 30px;
-      }
-
-      .hero-copy {
-        margin-top: 0;
-        padding-left: 22px;
+        padding: 24px;
       }
 
       .hero-support,
       .hero-proof {
-        margin-top: 28px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 18px;
+        max-width: 318px;
         position: static;
         width: 100%;
       }
 
       .hero-proof {
+        background: rgba(7, 38, 62, 0.74);
         grid-template-columns: 1fr;
-        padding: 22px;
+        padding: 18px 20px;
+        text-align: left;
+      }
+
+      .proof-item {
+        grid-template-columns: 34px minmax(0, 1fr);
       }
 
       .proof-item {
@@ -1250,37 +1358,174 @@
         padding-top: 0;
       }
 
+      .split,
+      .areas,
+      .partners,
+      .contact {
+        padding: 56px 0;
+      }
+
+      .split-grid > div,
+      .center-head,
+      .team-head,
+      .contact-panel,
+      .contact-form-panel {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 330px;
+        width: 100%;
+      }
+
+      .section-title,
+      .contact .section-title,
+      .team-head h2 {
+        font-size: clamp(29px, 8vw, 36px);
+        line-height: 1.08;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .team-head h2 {
+        font-size: 31px;
+        letter-spacing: 0.07em;
+        max-width: 100%;
+      }
+
+      .split p,
+      .center-head p,
+      .team-head p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+      }
+
+      .institutional-info {
+        grid-template-columns: 1fr;
+      }
+
+      .info-chip {
+        text-align: left;
+      }
+
       .partner-grid {
         grid-template-columns: 1fr;
-        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 330px;
+        width: 100%;
       }
 
       .practice-grid {
-        animation-duration: 22s;
+        animation: mobilePractices 30s ease-in-out infinite;
+        gap: 14px;
+        padding-left: calc((100% - 286px) / 2);
       }
 
       .practice-card {
-        flex-basis: min(78vw, 300px);
-        min-height: 390px;
+        flex-basis: 286px;
+        min-height: 350px;
+        text-align: left;
+      }
+
+      .practice-carousel {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .practice-carousel::before,
+      .practice-carousel::after {
+        display: none;
+      }
+
+      @keyframes mobilePractices {
+        0%, 14% {
+          transform: translateX(0);
+        }
+
+        20%, 34% {
+          transform: translateX(-300px);
+        }
+
+        40%, 54% {
+          transform: translateX(-600px);
+        }
+
+        60%, 74% {
+          transform: translateX(-900px);
+        }
+
+        80%, 94% {
+          transform: translateX(-1200px);
+        }
+
+        100% {
+          transform: translateX(-1500px);
+        }
+      }
+
+      .contact-list,
+      .map {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 292px;
+        width: 100%;
+      }
+
+      .contact-item {
+        text-align: left;
+      }
+
+      .map {
+        height: 180px;
+      }
+
+      label {
+        text-align: left;
       }
     }
 
     @media (max-width: 620px) {
       .wrap {
-        padding: 0 18px;
+        width: min(calc(100% - 32px), 358px);
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 27px;
       }
 
       .section-title {
-        font-size: 32px;
+        font-size: 29px;
       }
 
       .portrait-frame {
-        height: min(72vw, 286px);
-        width: min(72vw, 286px);
+        height: min(62vw, 236px);
+        width: min(100%, 304px);
+      }
+
+      .partner-card {
+        padding: 24px 18px 28px;
+      }
+
+      .partner-card h3 {
+        font-size: 22px;
+        min-height: 0;
+      }
+
+      .partner-card p {
+        font-size: 14px;
+      }
+
+      input,
+      textarea {
+        font-size: 14px;
+        margin-bottom: 18px;
+        padding: 14px 15px;
+      }
+
+      textarea {
+        min-height: 130px;
       }
 
       footer .wrap {
@@ -1329,7 +1574,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Advocacia estrat&eacute;gica</p>
-          <h1>Solu&ccedil;&otilde;es jur&iacute;dicas estrat&eacute;gicas. <span>Resultados reais.</span></h1>
+          <h1>Solu&ccedil;&otilde;es<br>jur&iacute;dicas<br>estrat&eacute;gicas. <span>Resultados reais.</span></h1>
           <p>Atua&ccedil;&atilde;o jur&iacute;dica consultiva e contenciosa com foco em empresas, neg&oacute;cios e pessoas que buscam seguran&ccedil;a, estrat&eacute;gia e excel&ecirc;ncia em cada decis&atilde;o.</p>
           <div class="cta-row">
             <a class="btn" href="https://wa.me/5592993652007" target="_blank" rel="noopener">Falar com especialista</a>
@@ -1374,16 +1619,16 @@
         </div>
         <div class="practice-carousel" aria-label="Carrossel de areas juridicas">
           <div class="practice-grid">
-          <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito C&iacute;vel"><div><h3>Direito C&iacute;vel</h3><p>Fam&iacute;lia, sucess&otilde;es, invent&aacute;rios, partilhas, div&oacute;rcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo"><div><h3>Direito Administrativo</h3><p>Atua&ccedil;&atilde;o junto a &oacute;rg&atilde;os p&uacute;blicos, ag&ecirc;ncias reguladoras, autarquias, processos administrativos e a&ccedil;&otilde;es judiciais estrat&eacute;gicas.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito Previdenci&aacute;rio"><div><h3>Direito Previdenci&aacute;rio</h3><p>Benef&iacute;cios, revis&otilde;es, planejamento previdenci&aacute;rio, requerimentos administrativos e a&ccedil;&otilde;es judiciais.</p></div></article>
-          <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e prote&ccedil;&atilde;o de direitos em rela&ccedil;&otilde;es de consumo.</p></div></article>
-            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/civil.png" alt=""><div><h3>Direito Civil</h3><p>Familia, sucessoes, inventarios, partilhas, divorcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
-            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/administrativo.png" alt=""><div><h3>Direito Administrativo</h3><p>Atuacao junto a orgaos publicos, agencias reguladoras, autarquias, processos administrativos e acoes judiciais estrategicas.</p></div></article>
-            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/trabalhista.png" alt=""><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
-            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/previdenciario.png" alt=""><div><h3>Direito Previdenciario</h3><p>Beneficios, revisoes, planejamento previdenciario, requerimentos administrativos e acoes judiciais.</p></div></article>
-            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/consumidor.png" alt=""><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e protecao de direitos em relacoes de consumo.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/civil.png" alt="Direito C&iacute;vel" loading="lazy" decoding="async"><div><h3>Direito C&iacute;vel</h3><p>Fam&iacute;lia, sucess&otilde;es, invent&aacute;rios, partilhas, div&oacute;rcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/administrativo.png" alt="Direito Administrativo" loading="lazy" decoding="async"><div><h3>Direito Administrativo</h3><p>Atua&ccedil;&atilde;o junto a &oacute;rg&atilde;os p&uacute;blicos, ag&ecirc;ncias reguladoras, autarquias, processos administrativos e a&ccedil;&otilde;es judiciais estrat&eacute;gicas.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/trabalhista.png" alt="Direito Trabalhista" loading="lazy" decoding="async"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/previdenciario.png" alt="Direito Previdenci&aacute;rio" loading="lazy" decoding="async"><div><h3>Direito Previdenci&aacute;rio</h3><p>Benef&iacute;cios, revis&otilde;es, planejamento previdenci&aacute;rio, requerimentos administrativos e a&ccedil;&otilde;es judiciais.</p></div></article>
+          <article class="practice-card"><img src="./assets/areas/consumidor.png" alt="Direito do Consumidor" loading="lazy" decoding="async"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e prote&ccedil;&atilde;o de direitos em rela&ccedil;&otilde;es de consumo.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/civil.png" alt="" loading="lazy" decoding="async"><div><h3>Direito Civil</h3><p>Familia, sucessoes, inventarios, partilhas, divorcios e demandas consultivas ou contenciosas de alta complexidade.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/administrativo.png" alt="" loading="lazy" decoding="async"><div><h3>Direito Administrativo</h3><p>Atuacao junto a orgaos publicos, agencias reguladoras, autarquias, processos administrativos e acoes judiciais estrategicas.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/trabalhista.png" alt="" loading="lazy" decoding="async"><div><h3>Direito Trabalhista</h3><p>Consultivo e contencioso para empresas, trabalhadores e sindicatos, com foco em risco, defesa e compliance.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/previdenciario.png" alt="" loading="lazy" decoding="async"><div><h3>Direito Previdenciario</h3><p>Beneficios, revisoes, planejamento previdenciario, requerimentos administrativos e acoes judiciais.</p></div></article>
+            <article class="practice-card" aria-hidden="true"><img src="./assets/areas/consumidor.png" alt="" loading="lazy" decoding="async"><div><h3>Direito do Consumidor</h3><p>Demandas individuais e coletivas, responsabilidade civil e protecao de direitos em relacoes de consumo.</p></div></article>
           </div>
         </div>
       </div>
@@ -1402,21 +1647,21 @@
         </div>
         <div class="partner-grid">
           <article class="partner-card">
-            <div class="portrait-frame"><img class="portrait portrait-miria" src="./assets/areas/IMG_1689.jpg" alt="Miri&atilde; Hildebrando"></div>
+            <div class="portrait-frame"><img class="portrait portrait-miria" src="./assets/areas/IMG_1689.jpg" alt="Miri&atilde; Hildebrando" loading="lazy" decoding="async"></div>
             <h3>Miri&atilde; Hildebrando</h3>
             <a class="linkedin" href="#">in</a>
             <div class="partner-divider"><span></span></div>
             <p><strong>S&oacute;cia Fundadora e Diretora Administrativa.</strong>Advogada com mais de 15 anos de atua&ccedil;&atilde;o em Direito Coletivo Sindical, direcionamento empresarial e planejamento estrat&eacute;gico.</p>
           </article>
           <article class="partner-card">
-            <div class="portrait-frame"><img class="portrait portrait-natalia" src="./assets/areas/IMG_1592.jpg" alt="Nat&aacute;lia Hildebrando"></div>
+            <div class="portrait-frame"><img class="portrait portrait-natalia" src="./assets/areas/IMG_1592.jpg" alt="Nat&aacute;lia Hildebrando" loading="lazy" decoding="async"></div>
             <h3>Nat&aacute;lia Hildebrando</h3>
             <a class="linkedin" href="#">in</a>
             <div class="partner-divider"><span></span></div>
             <p><strong>S&oacute;cia Coordenadora da &Aacute;rea Trabalhista e Direito Administrativo.</strong>Especialista em Direito do Trabalho e Direito Empresarial, com ampla experi&ecirc;ncia em Compliance Trabalhista.</p>
           </article>
           <article class="partner-card">
-            <div class="portrait-frame"><img class="portrait portrait-angela" src="./assets/areas/IMG_1582.jpg" alt="&Acirc;ngela Leite"></div>
+            <div class="portrait-frame"><img class="portrait portrait-angela" src="./assets/areas/IMG_1582.jpg" alt="&Acirc;ngela Leite" loading="lazy" decoding="async"></div>
             <h3>&Acirc;ngela Leite</h3>
             <a class="linkedin" href="#">in</a>
             <div class="partner-divider"><span></span></div>
