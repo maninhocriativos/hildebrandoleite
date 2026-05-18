@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png">
+  <link rel="icon" href="./assets/brand/logo.png">
   <style>
     :root {
       --bg: #001723;
@@ -88,6 +88,7 @@
     .brand-symbol {
       display: block;
       height: 58px;
+      object-fit: contain;
       width: 58px;
     }
 
@@ -1194,20 +1195,42 @@
       .wrap {
         margin-left: auto;
         margin-right: auto;
-        max-width: none;
-        padding: 0;
-        width: min(calc(100% - 32px), 358px);
+        max-width: 390px;
+        padding-left: 14px;
+        padding-right: 14px;
+        width: 100%;
+      }
+
+      .site-header {
+        max-width: 100%;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .site-header .wrap {
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+        width: 100%;
       }
 
       .nav-shell {
+        display: flex;
         gap: 12px;
-        grid-template-columns: 52px 1fr 42px;
+        justify-content: space-between;
         min-height: 72px;
+        min-width: 0;
+        padding-right: 46px;
+        position: relative;
+      }
+
+      .brand {
+        flex: 0 0 46px;
       }
 
       .brand-symbol {
-        height: 48px;
-        width: 48px;
+        height: 42px;
+        width: 46px;
       }
 
       .site-header .socials,
@@ -1217,6 +1240,15 @@
 
       .menu-toggle {
         display: inline-flex;
+        flex: 0 0 38px;
+        height: 38px;
+        margin-left: auto;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 80;
+        width: 38px;
       }
 
       .mobile-nav.is-open {
@@ -1229,11 +1261,11 @@
 
       .hero {
         background:
-          linear-gradient(180deg, rgba(0, 18, 31, 0.86), rgba(0, 18, 31, 0.7) 56%, rgba(0, 18, 31, 0.88)),
-          linear-gradient(90deg, rgba(0, 18, 31, 0.95), rgba(0, 18, 31, 0.74) 62%, rgba(0, 18, 31, 0.5)),
-          url("./assets/areas/BANNER-01.png") 72% top / auto 100% no-repeat;
-        min-height: auto;
-        padding: 44px 0 52px;
+          linear-gradient(180deg, rgba(0, 18, 31, 0.5), rgba(0, 18, 31, 0.42) 46%, rgba(0, 18, 31, 0.92) 100%),
+          linear-gradient(90deg, rgba(0, 18, 31, 0.94), rgba(0, 18, 31, 0.72) 54%, rgba(0, 18, 31, 0.18)),
+          url("./assets/hero/hero-mobile.png") center top / auto 100% no-repeat;
+        min-height: 668px;
+        padding: 38px 0 42px;
       }
 
       .hero-grid {
@@ -1244,11 +1276,11 @@
       .hero-copy {
         background: none;
         border-left: 0;
-        margin: 0 auto;
-        max-width: 318px;
+        margin: 0;
+        max-width: 304px;
         padding: 0;
         position: relative;
-        text-align: center;
+        text-align: left;
         width: 100%;
         z-index: 2;
       }
@@ -1256,7 +1288,7 @@
       .eyebrow {
         font-size: 10px;
         gap: 0;
-        justify-content: center;
+        justify-content: flex-start;
         letter-spacing: 0.14em;
         margin-bottom: 12px;
       }
@@ -1266,10 +1298,10 @@
       }
 
       .hero h1 {
-        font-size: clamp(25px, 7vw, 30px);
+        font-size: clamp(25px, 8vw, 32px);
         letter-spacing: 0;
-        line-height: 1.05;
-        margin: 0 auto 16px;
+        line-height: 1;
+        margin: 0 0 14px;
         max-width: 304px;
         text-wrap: balance;
       }
@@ -1279,9 +1311,9 @@
       }
 
       .hero p {
-        font-size: 14px;
-        line-height: 1.55;
-        margin: 0 auto 22px;
+        font-size: 13px;
+        line-height: 1.48;
+        margin: 0 0 20px;
         max-width: 286px;
       }
 
@@ -1289,7 +1321,8 @@
         align-items: center;
         flex-direction: column;
         gap: 10px;
-        justify-content: center;
+        justify-content: flex-start;
+        max-width: 286px;
       }
 
       .btn {
@@ -1337,25 +1370,7 @@
       }
 
       .hero-proof {
-        background: rgba(7, 38, 62, 0.74);
-        grid-template-columns: 1fr;
-        padding: 18px 20px;
-        text-align: left;
-      }
-
-      .proof-item {
-        grid-template-columns: 34px minmax(0, 1fr);
-      }
-
-      .proof-item {
-        border-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.13);
-        padding: 18px 0 0;
-      }
-
-      .proof-item:first-child {
-        border-top: 0;
-        padding-top: 0;
+        display: none;
       }
 
       .split,
@@ -1418,51 +1433,43 @@
       }
 
       .practice-grid {
-        animation: mobilePractices 30s ease-in-out infinite;
-        gap: 14px;
-        padding-left: calc((100% - 286px) / 2);
+        animation: none;
+        gap: 12px;
+        padding: 0 0 10px;
+        width: 100%;
       }
 
       .practice-card {
-        flex-basis: 286px;
+        flex: 0 0 100%;
         min-height: 350px;
+        scroll-snap-align: center;
         text-align: left;
+        width: 100%;
+      }
+
+      .practice-card[aria-hidden="true"] {
+        display: none;
       }
 
       .practice-carousel {
+        margin-left: 0;
         max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-padding: 0;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
         width: 100%;
+      }
+
+      .practice-carousel::-webkit-scrollbar {
+        display: none;
       }
 
       .practice-carousel::before,
       .practice-carousel::after {
         display: none;
-      }
-
-      @keyframes mobilePractices {
-        0%, 14% {
-          transform: translateX(0);
-        }
-
-        20%, 34% {
-          transform: translateX(-300px);
-        }
-
-        40%, 54% {
-          transform: translateX(-600px);
-        }
-
-        60%, 74% {
-          transform: translateX(-900px);
-        }
-
-        80%, 94% {
-          transform: translateX(-1200px);
-        }
-
-        100% {
-          transform: translateX(-1500px);
-        }
       }
 
       .contact-list,
@@ -1474,7 +1481,43 @@
       }
 
       .contact-item {
+        gap: 12px;
+        grid-template-columns: 36px minmax(0, 1fr);
         text-align: left;
+      }
+
+      .contact-icon {
+        height: 36px;
+        width: 36px;
+      }
+
+      .contact-icon svg {
+        height: 16px;
+        width: 16px;
+      }
+
+      .contact-item > span:not(.contact-icon),
+      .contact-item a {
+        display: -webkit-box;
+        font-size: 10.6px;
+        line-height: 1.25;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .team-foot {
+        display: block;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        line-height: 1.35;
+        margin: 28px auto 0;
+        max-width: 292px;
+      }
+
+      .team-foot::before,
+      .team-foot::after {
+        display: none;
       }
 
       .map {
@@ -1488,7 +1531,10 @@
 
     @media (max-width: 620px) {
       .wrap {
-        width: min(calc(100% - 32px), 358px);
+        max-width: 390px;
+        padding-left: 14px;
+        padding-right: 14px;
+        width: 100%;
       }
 
       .hero h1 {
@@ -1539,10 +1585,7 @@
   <header class="site-header">
     <div class="wrap nav-shell">
       <a class="brand" href="#home" aria-label="Hildebrando & Leite">
-        <svg class="brand-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M7 6h17v10h-7v32h11V28h8v20h11V16h-7V6h17v52H37V38H27v20H7V6Z"/>
-          <path fill="currentColor" d="M28 6h8v18h-8z"/>
-        </svg>
+        <img class="brand-symbol" src="./assets/brand/logo.png" alt="">
       </a>
       <div class="socials" aria-label="Redes sociais">
         <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm4.5 5.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm5-0.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
@@ -1637,10 +1680,7 @@
     <section class="partners" id="socias">
       <div class="wrap">
         <div class="team-head">
-          <svg class="team-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M7 6h17v10h-7v32h11V28h8v20h11V16h-7V6h17v52H37V38H27v20H7V6Z"/>
-            <path fill="currentColor" d="M28 6h8v18h-8z"/>
-          </svg>
+          <img class="team-mark" src="./assets/brand/logo.png" alt="">
           <h2>Nossa Equipe</h2>
           <div class="team-rule"><span></span></div>
           <p>Profissionais com experi&ecirc;ncia, estrat&eacute;gia e atua&ccedil;&atilde;o de excel&ecirc;ncia.</p>
@@ -1678,7 +1718,7 @@
           <span class="section-kicker">Contato</span>
           <h2 class="section-title">Como podemos <span>ajudar</span> na sua demanda?</h2>
           <div class="contact-list">
-            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"/></svg></span><span>Av. Dr. Theom&aacute;rio Pinto da Costa, n&ordm; 811, Bairro Chapada, 13&ordm; andar, Sala 1301, Edif&iacute;cio Skye Platinum Offices, Manaus-AM</span></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"/></svg></span><span>Av. Dr. Theom&aacute;rio Pinto da Costa, n&ordm; 811, Sala 1301, Skye Platinum Offices, Manaus-AM</span></div>
             <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.6c0 .7-.6 1.3-1.3 1.3C10.3 22.1 1.9 13.7 1.9 3.3 1.9 2.6 2.5 2 3.2 2h3.6c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-1.8 2.2Z"/></svg></span><a href="tel:+5592534846021">(92) 3348-4602 | (92) 99365-2007</a></div>
             <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 8 8-5.3V7L12 12.2 4 7v.7L12 13Z"/></svg></span><a href="mailto:hl@hlassociados.com">hl@hlassociados.com</a></div>
           </div>
@@ -1699,7 +1739,7 @@
 
   <footer>
     <div class="wrap">
-      <img src="https://hildebrandoleite.com.br/wp-content/uploads/2023/11/LOGO.png" alt="">
+      <img src="./assets/brand/logo.png" alt="">
       <p>&copy;2026 Hildebrando & Leite - Todos os Direitos Reservados.</p>
       <div class="socials">
         <a class="social" href="https://www.instagram.com/hildebrandoeleite/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm4.5 5.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Z"/></svg></a>
