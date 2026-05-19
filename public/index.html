@@ -72,8 +72,10 @@
   <script>
     (function () {
       var mobileBreakpoint = 920;
+      var version = "20260519b";
       var target = window.matchMedia("(max-width: " + mobileBreakpoint + "px)").matches ? "mobile.html" : "desktop.html";
-      window.location.replace(target + window.location.search + window.location.hash);
+      var search = window.location.search || ("?v=" + version);
+      window.location.replace(target + search + window.location.hash);
     })();
   </script>
 </head>
