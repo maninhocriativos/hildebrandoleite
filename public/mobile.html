@@ -347,22 +347,26 @@
     .support-icon {
       align-items: center;
       border: 2px solid var(--blue-2);
-      border-radius: 18px 18px 24px 24px;
+      border-radius: 50%;
       color: var(--blue);
-      display: flex;
+      display: grid;
       height: 48px;
       justify-content: center;
+      line-height: 0;
+      place-items: center;
       width: 48px;
     }
 
     .support-icon svg {
+      display: block;
       fill: none;
-      height: 25px;
+      height: 22px;
+      margin: 0;
       stroke: currentColor;
       stroke-linecap: round;
       stroke-linejoin: round;
       stroke-width: 2;
-      width: 25px;
+      width: 22px;
     }
 
     .hero-support strong {
@@ -724,6 +728,7 @@
       filter: drop-shadow(0 0 16px rgba(100, 173, 255, 0.2));
       height: 54px;
       margin: 0 auto 18px;
+      object-fit: contain;
       width: 54px;
     }
 
