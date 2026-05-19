@@ -635,7 +635,7 @@
     }
 
     .practice-grid {
-      animation: slidePractices 28s linear infinite;
+      animation: slidePractices 18s linear infinite;
       display: flex;
       flex-wrap: nowrap;
       gap: 20px;
@@ -1834,6 +1834,47 @@
         menuButton.setAttribute("aria-expanded", "false");
       });
     });
+
+    const practiceCarousel = document.querySelector(".practice-carousel");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (practiceCarousel && !prefersReducedMotion) {
+      let autoSlideTimer;
+      let resumeTimer;
+
+      const visiblePracticeCards = () =>
+        Array.from(practiceCarousel.querySelectorAll(".practice-card")).filter((card) => card.offsetParent !== null);
+
+      const nextPracticeCard = () => {
+        const cards = visiblePracticeCards();
+        if (cards.length < 2) return;
+
+        const currentLeft = practiceCarousel.scrollLeft;
+        const nextCard = cards.find((card) => card.offsetLeft > currentLeft + 18) || cards[0];
+
+        practiceCarousel.scrollTo({
+          left: nextCard.offsetLeft,
+          behavior: "smooth"
+        });
+      };
+
+      const startPracticeAutoSlide = () => {
+        window.clearInterval(autoSlideTimer);
+        autoSlideTimer = window.setInterval(nextPracticeCard, 2600);
+      };
+
+      const pausePracticeAutoSlide = () => {
+        window.clearInterval(autoSlideTimer);
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(startPracticeAutoSlide, 5200);
+      };
+
+      ["pointerdown", "touchstart", "wheel", "focusin"].forEach((eventName) => {
+        practiceCarousel.addEventListener(eventName, pausePracticeAutoSlide, { passive: true });
+      });
+
+      startPracticeAutoSlide();
+    }
 
     document.querySelector("#contact-form").addEventListener("submit", (event) => {
       event.preventDefault();
